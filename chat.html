@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ochestra Concierge Chat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: var(--color-midnight);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fixed inset-0" style="z-index: -1; opacity: 0.4; pointer-events: none;">
+        <div class="absolute"
+            style="top: 5rem; left: 10rem; width: 24rem; height: 24rem; background: rgba(212,175,55,0.1); border-radius: 50%; filter: blur(120px);">
+        </div>
+        <div class="absolute"
+            style="bottom: 5rem; right: 10rem; width: 30rem; height: 30rem; background-color: var(--color-midnight-light); border-radius: 50%; filter: blur(150px);">
+        </div>
+    </div>
+
+    <div class="chat-container relative">
+        <header class="chat-header">
+            <div class="flex items-center gap-3">
+                <div style="width: 2rem; height: 2rem; color: var(--color-gold);">
+                    <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <h2
+                        style="font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; line-height: 1;">
+                        Ochestra</h2>
+                    <span
+                        style="color: var(--color-gold); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500;">Concierge
+                        Desk</span>
+                </div>
+            </div>
+            <div class="flex gap-4">
+                <button style="color: rgba(255,255,255,0.6);">
+                    <span class="material-symbols-outlined">remove</span>
+                </button>
+                <button style="color: rgba(255,255,255,0.6);" onclick="location.href='Index.html'">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="chat-scroll-area flex flex-col gap-6">
+            <div class="flex justify-center">
+                <p
+                    style="font-size: 0.6875rem; font-weight: 500; color: var(--color-slate-400); text-transform: uppercase; letter-spacing: 0.1em;">
+                    Today, 10:42 AM</p>
+            </div>
+
+            <!-- Message 1 -->
+            <div class="flex items-end gap-3" style="max-width: 85%;">
+                <div
+                    style="width: 2.25rem; height: 2.25rem; border-radius: 50%; background-color: var(--color-midnight-light); border: 1px solid rgba(212,175,55,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <span class="material-symbols-outlined text-gold" style="font-size: 0.875rem;">auto_awesome</span>
+                </div>
+                <div>
+                    <p
+                        style="font-size: 0.6875rem; color: var(--color-slate-500); font-weight: 600; text-transform: uppercase; margin-left: 0.25rem;">
+                        Concierge</p>
+                    <div class="message-bubble message-concierge">
+                        Welcome back to Ochestra. I am your personal Artisan. How may I assist with your interior vision
+                        today?
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message 2 -->
+            <div class="flex items-end gap-3 justify-end ml-auto" style="max-width: 85%;">
+                <div class="flex flex-col items-end">
+                    <p
+                        style="font-size: 0.6875rem; color: var(--color-slate-500); font-weight: 600; text-transform: uppercase; margin-right: 0.25rem;">
+                        Client</p>
+                    <div class="message-bubble message-client">
+                        I'm looking for a bespoke dining table for a mid-century space. Something in dark wood.
+                    </div>
+                </div>
+                <div
+                    style="width: 2.25rem; height: 2.25rem; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBerrhlLCAswHpaUBwbUrYEomUwOabR2uikDBFZ4wObcJ2nUFTMnsaqI81C-FcfrDZ0IilpaQCru6z9Lnr0QAMfuVRXeczi2DR0iZElGhLHaQLlFa-RsGCocJLOV_FUKiiv_7loY4ldH8mWlTj6z9IIWNwaJWkWg7DGiPH-BZ7ymBo0GWtdS1Xt32w0ZT5TSymhRkrFkGXsSbtWFcsN_FzYEKEWq24VVPpv99hsCmZlyyrsMJGLrDAFtsAPypRUb2XgfObuRG1op1bE'); background-size: cover; flex-shrink: 0;">
+                </div>
+            </div>
+
+            <!-- Message 3 -->
+            <div class="flex items-end gap-3" style="max-width: 85%;">
+                <div
+                    style="width: 2.25rem; height: 2.25rem; border-radius: 50%; background-color: var(--color-midnight-light); border: 1px solid rgba(212,175,55,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <span class="material-symbols-outlined text-gold" style="font-size: 0.875rem;">auto_awesome</span>
+                </div>
+                <div>
+                    <p
+                        style="font-size: 0.6875rem; color: var(--color-slate-500); font-weight: 600; text-transform: uppercase; margin-left: 0.25rem;">
+                        Concierge</p>
+                    <div class="message-bubble message-concierge">
+                        An excellent choice. Our current Artisan Collection has several hand-finished walnut options
+                        that would anchor a mid-century room perfectly. Would you like to see our live inventory?
+                    </div>
+                </div>
+            </div>
+
+            <div
+                style="padding: 0 0.25rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; color: var(--color-gold); font-weight: 500;">
+                <span class="flex gap-1">
+                    <span
+                        style="width: 0.25rem; height: 0.25rem; background-color: var(--color-gold); border-radius: 50%;"></span>
+                    <span
+                        style="width: 0.25rem; height: 0.25rem; background-color: rgba(212,175,55,0.6); border-radius: 50%;"></span>
+                    <span
+                        style="width: 0.25rem; height: 0.25rem; background-color: rgba(212,175,55,0.3); border-radius: 50%;"></span>
+                </span>
+                Artisan is typing...
+            </div>
+        </div>
+
+        <div class="chat-input-area">
+            <div class="relative group">
+                <button class="absolute left-0" style="color: var(--color-gold);">
+                    <span class="material-symbols-outlined">attach_file</span>
+                </button>
+                <input class="chat-input" placeholder="Speak with an Artisan..." type="text" />
+                <button class="absolute right-0" style="color: var(--color-gold);">
+                    <span class="material-symbols-outlined">send</span>
+                </button>
+            </div>
+            <p
+                style="margin-top: 1rem; font-size: 0.625rem; text-align: center; color: var(--color-slate-500); opacity: 0.5; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 500;">
+                Confidential Design Consultation • Ochestra Ltd.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

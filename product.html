@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ochestra Shop: The Boutique Experience</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container flex justify-between items-center">
+            <div class="logo-container">
+                <a class="logo-container" href="Index.html">
+                    <div style="width: 1.5rem; height: 1.5rem; color: var(--color-gold);">
+                        <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                    <h2 class="logo-text" style="font-size: 1.25rem;">OCHESTRA</h2>
+                </a>
+
+                <nav class="nav-menu">
+                    <!-- Standard Menu: Home, About Us, Service, Collection, Contact -->
+                    <!-- Active Page Logic: If this is 'Product' or 'Shop', it isn't in the list strictly. I will show all standard links. -->
+                    <a class="nav-link" href="Index.html">Home</a>
+                    <a class="nav-link" href="aboutus.html">About Us</a>
+                    <a class="nav-link" href="services.html">Service</a>
+                    <a class="nav-link" href="collections.html">Collection</a>
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </nav>
+            </div>
+
+            <div class="flex items-center gap-8">
+                <button onclick="document.body.classList.add('drawer-open')" class="flex items-center gap-2 nav-link">
+                    <span class="material-symbols-outlined" style="font-size: 1.25rem;">tune</span>
+                    <span class="hidden-lg">Filters</span>
+                </button>
+                <button class="relative nav-link">
+                    <span class="material-symbols-outlined" style="font-size: 1.25rem;">shopping_bag</span>
+                    <span
+                        style="position: absolute; top: -4px; right: -4px; width: 0.875rem; height: 0.875rem; background: var(--color-gold); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.5rem;">2</span>
+                </button>
+                <button class="mobile-toggle">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Drawer (Keep existing markup) -->
+    <div id="drawer-container">
+        <div id="drawer-overlay" onclick="document.body.classList.remove('drawer-open')"></div>
+        <aside id="filter-drawer"
+            style="background-color: var(--color-midnight); border-right: 1px solid var(--color-gold);">
+            <div class="flex items-center justify-between mb-12 border-b border-white/10 pb-6">
+                <h2 class="font-serif italic text-white" style="font-size: 1.875rem;">Refine Selection</h2>
+                <button onclick="document.body.classList.remove('drawer-open')">
+                    <span class="material-symbols-outlined text-white">close</span>
+                </button>
+            </div>
+
+            <div class="flex flex-col gap-12 text-slate-300">
+                <div>
+                    <h3 class="uppercase font-bold"
+                        style="font-size: 0.625rem; letter-spacing: 0.3em; margin-bottom: 2rem; color: var(--color-gold);">
+                        Category</h3>
+                    <div class="flex flex-col gap-4">
+                        <label class="flex items-center justify-between cursor-pointer hover:text-white">
+                            <span>Bespoke Seating</span>
+                            <input type="checkbox" class="accent-gold">
+                        </label>
+                        <label class="flex items-center justify-between cursor-pointer hover:text-white">
+                            <span>Artisanal Tables</span>
+                            <input type="checkbox" class="accent-gold">
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <button class="w-full btn-primary"
+                        style="background: var(--color-gold); color: var(--color-midnight);">Display Results</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Quick View Modal (New) -->
+    <div class="modal-overlay" id="product-modal">
+        <div class="modal-content">
+            <button class="modal-close">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <!-- Simulated Content based on productdetails.html -->
+            <div class="w-full md:w-1/2 relative bg-black">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuRr4DJDE4A4riVwKpvnKA4GrnEclGCbiUxUgGi-eeuWgDRgA5V28kGkoBl_-CgN_yG32vtg70AOidaqc9AyHApnDOBsYZkaeR6Ws4b7tz3UxJewh3Uc_o7KD2wuuk6Me9nulnhtVjUeQZnKcc-9lxHkEshsOfd3B7rlsQ69B8kn-VMHeB1AAidtdTM3Iczol-6IMF3wi3E4kcORZyDQYZ2ER0BIyvNsccCUtVZXOhZS_hmq11CPcNm2ouuvl2BEjPD8xp35h2VPyh"
+                    class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 p-12 flex flex-col justify-center">
+                <span class="text-gold uppercase tracking-widest text-xs font-bold mb-4">Signature Collection</span>
+                <h2 class="font-serif italic text-4xl mb-4">Walnut Dining Table</h2>
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="text-2xl font-bold text-white">$4,200</span>
+                    <div class="flex text-gold text-sm">
+                        <span class="material-symbols-outlined">star</span>
+                        <span class="material-symbols-outlined">star</span>
+                        <span class="material-symbols-outlined">star</span>
+                        <span class="material-symbols-outlined">star</span>
+                        <span class="material-symbols-outlined">star</span>
+                    </div>
+                </div>
+                <p class="text-slate-400 font-light mb-8 leading-relaxed">
+                    Hand-finished in our Milan atelier. Solid sustainable walnut with a matte tung oil finish. A true
+                    centerpiece for the discerning collector.
+                </p>
+                <div class="flex gap-4">
+                    <button class="btn-primary" style="flex: 1;">Add to Cart</button>
+                    <button class="btn-secondary" style="flex: 1; border: 1px solid var(--color-slate-700);">Full
+                        Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Widget (New) -->
+    <div class="chat-widget-btn">
+        <span class="material-symbols-outlined" style="font-size: 1.5rem;">chat_bubble</span>
+    </div>
+
+    <div class="chat-modal-window">
+        <div class="chat-header-small">
+            <span class="uppercase font-bold text-gold text-xs tracking-widest">Values Concierge</span>
+            <span class="material-symbols-outlined text-slate-500 cursor-pointer chat-close">close</span>
+        </div>
+        <div class="chat-scroll-area">
+            <div class="flex flex-col gap-4">
+                <div class="message-bubble message-concierge">
+                    Welcome to Ochestra. How may we assist you with your collection today?
+                </div>
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" class="chat-input" placeholder="Type a message...">
+        </div>
+    </div>
+
+    <main class="container" style="padding-top: 4rem; padding-bottom: 8rem;">
+        <div class="text-center mb-24 flex flex-col items-center">
+            <nav class="flex items-center gap-4 mb-8 text-[9px] uppercase tracking-[0.4em] text-slate-400">
+                <a class="hover:text-gold" href="#">Heritage</a>
+                <span style="width: 4px; height: 4px; background: var(--color-gold); border-radius: 50%;"></span>
+                <span class="text-white">Shop</span>
+            </nav>
+            <h1 class="font-serif italic" style="font-size: 4rem; margin-bottom: 2rem;">Artisanal Masterpieces</h1>
+            <p class="text-slate-400"
+                style="font-size: 1.125rem; font-weight: 300; font-style: italic; max-width: 42rem; opacity: 0.8;">
+                Where timeless craftsmanship meets the modern silhouette.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-3 gap-12 flex-col-mobile">
+            <!-- Product 1 with Quick View Class -->
+            <div class="product-card group" style="background: rgba(255,255,255,0.03);">
+                <div class="relative aspect-[4/5] overflow-hidden mb-8">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2-W2Ipyyb9gB3N1zVEUei7wr2_ci1CecWWzy9Xf-CiwsSUgADpZfi07_zH8YrYw0OC8vJOfqU5HARXH8qqUR7zRB2GIjZNeCnP7-DXucLrLQa9AJK24ASZNK3V4MqzUjK3jKIvTj-AEuL6wTkNZ43oOlDRtbPlS7ZXtoglq1tIOzA_Yu3MB1glPHXHqx_nX5GKbrLkj21YEXGPy0jvjQgfIbp5qKn9CatM6cArDaxGK3x0Dy-80QSngJlxMRKyh1CMSFuvZC6jdYC"
+                        class="w-full h-full object-cover">
+                    <div class="quick-view-overlay">
+                        <button class="btn-primary quick-view-btn">Quick View</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-baseline mb-2">
+                    <h3 class="font-serif italic" style="font-size: 1.5rem;">Aurelius Marble</h3>
+                    <span class="text-gold">$8,900</span>
+                </div>
+                <p class="uppercase text-slate-500" style="font-size: 0.625rem; letter-spacing: 0.2em;">Carrara Marble
+                    &amp; Steel</p>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card group" style="background: rgba(255,255,255,0.03);">
+                <div class="relative aspect-[4/5] overflow-hidden mb-8">
+                    <img src="Image/Dinning.jpg" class="w-full h-full object-cover">
+                    <div class="quick-view-overlay">
+                        <button class="btn-primary quick-view-btn">Quick View</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-baseline mb-2">
+                    <h3 class="font-serif italic" style="font-size: 1.5rem;">Verona Velvet</h3>
+                    <span class="text-gold">$4,250</span>
+                </div>
+                <p class="uppercase text-slate-500" style="font-size: 0.625rem; letter-spacing: 0.2em;">Emerald Velvet
+                </p>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card group" style="background: rgba(255,255,255,0.03);">
+                <div class="relative aspect-[4/5] overflow-hidden mb-8">
+                    <img src="Image/Bedroom2.jpg" class="w-full h-full object-cover">
+                    <div class="quick-view-overlay">
+                        <button class="btn-primary quick-view-btn">Quick View</button>
+                    </div>
+                    <div class="absolute top-4 left-4 bg-walnut text-white uppercase font-bold px-2 py-1"
+                        style="font-size: 0.5rem; letter-spacing: 0.2em;">Signature</div>
+                </div>
+                <div class="flex justify-between items-baseline mb-2">
+                    <h3 class="font-serif italic" style="font-size: 1.5rem;">Serenity Bed</h3>
+                    <span class="text-gold">$8,900</span>
+                </div>
+                <p class="uppercase text-slate-500" style="font-size: 0.625rem; letter-spacing: 0.2em;">Custom
+                    Upholstery</p>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card group" style="background: rgba(255,255,255,0.03);">
+                <div class="relative aspect-[4/5] overflow-hidden mb-8">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpAHdi2lQbRuszhVa0dWvBsBjES-ctcprHxJkdm8GBr93G8a0jai1n35JClP0jPIX7-03u3Rbja0M1iBkZKzEgLwUlhiQOSH_xbqyvzgPIEPRjapuARlXGHRqs2Ni1ZybNTVIKQ5c9WBnDC8aAdruK7PRBdekhaEbT0vDV095PCZoHeAlwmEXEEqHv30stJnnU4KnYyORHSm0DQGXXAJcoP6mm4O5IQOFWCN2Mc6Z9T7yaIy9LEr5arDjdMkX2sCgVJoZcNfKoFD-a"
+                        class="w-full h-full object-cover">
+                    <div class="quick-view-overlay">
+                        <button class="btn-primary quick-view-btn">Quick View</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-baseline mb-2">
+                    <h3 class="font-serif italic" style="font-size: 1.5rem;">Horizon Lounge</h3>
+                    <span class="text-gold">$2,100</span>
+                </div>
+                <p class="uppercase text-slate-500" style="font-size: 0.625rem; letter-spacing: 0.2em;">Cognac Leather
+                </p>
+            </div>
+
+            <!-- CTA Card -->
+            <div class="product-card group bg-walnut text-white"
+                style="background-color: var(--color-walnut); color: white;">
+                <div
+                    class="relative aspect-[4/5] overflow-hidden mb-8 border border-white/20 flex flex-col items-center justify-center p-8 text-center">
+                    <span class="uppercase font-bold text-gold"
+                        style="font-size: 0.625rem; letter-spacing: 0.3em; margin-bottom: 1.5rem;">Bespoke
+                        Commissions</span>
+                    <h3 class="font-serif italic" style="font-size: 2rem; margin-bottom: 2rem;">Craft your vision</h3>
+                    <button class="btn-secondary"
+                        style="border-color: var(--color-gold); color: var(--color-gold);">Begin Consultation</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container pb-12 pt-12 text-center text-slate-500 text-xs">
+            © 2024 Ochestra Black Label.
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ochestra | Start Your Project</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Specific override for project page font */
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Mobile Header (Hidden on Desktop) -->
+    <header class="project-mobile-header"
+        style="background-color: #221d10; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div class="flex items-center gap-3">
+            <div
+                style="width: 2rem; height: 2rem; background-color: var(--color-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #0a0e1a;">
+                O</div>
+            <h2 style="font-size: 1rem; color: white;">Ochestra</h2>
+        </div>
+        <button class="mobile-toggle">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+    </header>
+
+    <!-- Navigation Overlay for Mobile (Reuse global logic from main.js if specific elements match, else minimal inline) -->
+    <div class="nav-menu" style="background-color: var(--color-midnight);">
+        <!-- Standard Nav Links for Mobile -->
+        <a class="nav-link" href="Index.html">Home</a>
+        <a class="nav-link" href="aboutus.html">About Us</a>
+        <a class="nav-link" href="services.html">Service</a>
+        <a class="nav-link" href="collections.html">Collection</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+    </div>
+
+    <div class="flex" style="min-height: 100vh;">
+        <!-- Sidebar -->
+        <aside class="project-sidebar">
+            <div class="flex flex-col gap-12">
+                <div class="flex items-center gap-3">
+                    <div
+                        style="width: 2.5rem; height: 2.5rem; background-color: var(--color-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; color: #221d10;">
+                        O</div>
+                    <div>
+                        <h2
+                            style="color: white; font-size: 1.125rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">
+                            Ochestra</h2>
+                        <p
+                            style="color: var(--color-gold); font-size: 0.625rem; letter-spacing: 0.2em; text-transform: uppercase;">
+                            Master Artisans</p>
+                    </div>
+                </div>
+
+                <nav class="flex flex-col gap-6">
+                    <div class="flex items-center gap-4 cursor-pointer">
+                        <span class="font-serif italic text-gold" style="font-size: 1.25rem;">01</span>
+                        <span style="font-weight: 500;">The Concept</span>
+                        <span class="material-symbols-outlined text-gold"
+                            style="font-size: 1rem; margin-left: auto;">arrow_right_alt</span>
+                    </div>
+                    <div class="flex items-center gap-4 cursor-pointer" style="opacity: 0.4;">
+                        <span class="font-serif italic text-gold" style="font-size: 1.25rem;">02</span>
+                        <span style="font-weight: 500;">The Space</span>
+                    </div>
+                    <div class="flex items-center gap-4 cursor-pointer" style="opacity: 0.4;">
+                        <span class="font-serif italic text-gold" style="font-size: 1.25rem;">03</span>
+                        <span style="font-weight: 500;">Inspiration</span>
+                    </div>
+                    <div class="flex items-center gap-4 cursor-pointer" style="opacity: 0.4;">
+                        <span class="font-serif italic text-gold" style="font-size: 1.25rem;">04</span>
+                        <span style="font-weight: 500;">Concierge</span>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <p style="opacity: 0.4; font-size: 0.75rem; font-style: italic;">"Crafting legacies, one grain at a
+                    time."</p>
+                <button
+                    style="width: 100%; border: 1px solid rgba(212,175,55,0.3); background-color: rgba(212,175,55,0.1); padding: 0.75rem; border-radius: 0.25rem; color: var(--color-gold); font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">View
+                    Portfolio</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col items-center py-12 px-6 lg:px-20 overflow-y-auto">
+            <div style="max-width: 48rem; width: 100%; display: flex flex-col; gap: 3rem;">
+                <header class="text-center lg:text-left mb-12">
+                    <h1 class="font-serif" style="font-size: 3rem; margin-bottom: 1rem;">Begin Your Legacy Piece</h1>
+                    <p style="opacity: 0.6; font-size: 1.125rem;">Share your vision with our master craftsmen. Every
+                        masterpiece begins with a single conversation.</p>
+                </header>
+
+                <!-- Section 1 -->
+                <section class="flex flex-col gap-8 mb-16">
+                    <div class="flex items-center gap-4">
+                        <span style="height: 1px; flex: 1; background-color: rgba(212,175,55,0.3);"></span>
+                        <h3 class="font-serif italic text-gold" style="font-size: 1.25rem; padding: 0 1rem;">01. The
+                            Concept</h3>
+                        <span style="height: 1px; flex: 1; background-color: rgba(212,175,55,0.3);"></span>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-12 flex-col-mobile">
+                        <div class="flex flex-col gap-2">
+                            <label class="uppercase font-bold"
+                                style="font-size: 0.75rem; letter-spacing: 0.2em; opacity: 0.4;">Project Title</label>
+                            <input class="gold-underline py-3 text-xl placeholder-opacity-20"
+                                placeholder="e.g., The Obsidian Study" type="text" style="color: white;">
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="uppercase font-bold"
+                                style="font-size: 0.75rem; letter-spacing: 0.2em; opacity: 0.4;">Project Type</label>
+                            <select class="gold-underline py-3 text-xl" style="color: white; color-scheme: dark;">
+                                <option>Private Residential</option>
+                                <option>Commercial Suite</option>
+                                <option>Bespoke Furniture</option>
+                                <option>Yacht Interior</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <label class="uppercase font-bold"
+                            style="font-size: 0.75rem; letter-spacing: 0.2em; opacity: 0.4;">The Vision</label>
+                        <textarea class="gold-underline py-3 text-xl placeholder-opacity-20"
+                            placeholder="Describe the soul of this project..." rows="2"
+                            style="color: white;"></textarea>
+                    </div>
+                </section>
+
+                <!-- Section 2 -->
+                <section class="flex flex-col gap-8 mb-16">
+                    <div class="flex items-center gap-4">
+                        <span style="height: 1px; flex: 1; background-color: rgba(212,175,55,0.3);"></span>
+                        <h3 class="font-serif italic text-gold" style="font-size: 1.25rem; padding: 0 1rem;">02.
+                            Inspiration</h3>
+                        <span style="height: 1px; flex: 1; background-color: rgba(212,175,55,0.3);"></span>
+                    </div>
+
+                    <div
+                        class="gold-leaf-border rounded-xl p-12 flex flex-col items-center text-center cursor-pointer hover:bg-gold-light transition-all">
+                        <div
+                            style="width: 4rem; height: 4rem; border-radius: 50%; background-color: rgba(212,175,55,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <span class="material-symbols-outlined text-gold"
+                                style="font-size: 2rem;">upload_file</span>
+                        </div>
+                        <h4 style="font-size: 1.25rem; font-weight: 500; margin-bottom: 0.5rem;">Upload Your Inspiration
+                        </h4>
+                        <p style="opacity: 0.4; font-size: 0.875rem; margin-bottom: 2rem;">Drag &amp; drop mood boards,
+                            sketches, or site photos (Max 50MB)</p>
+                        <button class="btn-primary"
+                            style="background: transparent; border: 1px solid var(--color-gold); color: var(--color-gold);">Select
+                            Files</button>
+                    </div>
+                </section>
+
+                <!-- Submit -->
+                <div class="flex justify-center lg:justify-end">
+                    <button class="btn-primary"
+                        style="background: var(--color-gold); color: var(--color-midnight);">Submit Inquiry</button>
+                </div>
+
+                <footer class="text-center mt-12 py-12 border-t border-white/5 flex flex-col gap-6">
+                    <div class="embossed-logo font-serif italic font-bold" style="font-size: 1.5rem;">Ochestra</div>
+                    <nav class="flex justify-center gap-8 uppercase font-bold"
+                        style="font-size: 0.625rem; letter-spacing: 0.1em; opacity: 0.4;">
+                        <a href="#">Privacy</a><a href="#">Legal</a>
+                    </nav>
+                </footer>
+            </div>
+        </main>
+
+        <div class="fixed bottom-8 right-8 z-50">
+            <button
+                style="width: 3.5rem; height: 3.5rem; background-color: var(--color-gold); color: #0a0e1a; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);">
+                <span class="material-symbols-outlined" style="font-size: 1.5rem;">chat_bubble</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget-btn">
+        <span class="material-symbols-outlined" style="font-size: 1.5rem;">chat_bubble</span>
+    </div>
+
+    <div class="chat-modal-window">
+        <div class="chat-header-small">
+            <span class="uppercase font-bold text-gold text-xs tracking-widest">Project Support</span>
+            <span class="material-symbols-outlined text-slate-500 cursor-pointer chat-close">close</span>
+        </div>
+        <div class="chat-scroll-area">
+            <div class="flex flex-col gap-4">
+                <div class="message-bubble message-concierge">
+                    Ready to start your project? We are here to help.
+                </div>
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" class="chat-input" placeholder="Type a message...">
+        </div>
+    </div>
+</body>
+
+</html>

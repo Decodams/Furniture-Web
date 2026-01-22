@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ochestra Home: Exquisite Luxury</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container flex justify-between items-center">
+            <div class="logo-container">
+                <a class="logo-container" href="#">
+                    <div class="logo-icon">
+                        <svg class="text-midnight" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"
+                            style="color: #020408;">
+                            <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                    <h2 class="logo-text">OCHESTRA</h2>
+                </a>
+
+                <nav class="nav-menu">
+                    <!-- Active Page: Home (Hidden) -->
+                    <a class="nav-link" href="aboutus.html">About Us</a>
+                    <a class="nav-link" href="services.html">Service</a>
+                    <a class="nav-link" href="collections.html">Collection</a>
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </nav>
+            </div>
+
+            <div class="flex items-center gap-8">
+                <div class="search-container">
+                    <span class="material-symbols-outlined search-icon">search</span>
+                    <input class="search-input" placeholder="Search archive..." type="text" />
+                </div>
+
+                <button class="nav-link hidden-lg" onclick="location.href='contact.html'"
+                    style="display: block;">Inquiry</button>
+
+                <div
+                    style="width: 2.5rem; height: 2.5rem; border-radius: 50%; border: 1px solid rgba(212, 175, 55, 0.3); background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA8kbQm95_dDYMaB1KCEpop8E-5y0uF9kGd69nz5efrzvJXKGU1_szbGvaAqmkPyzTZ7uN5DpFYHuHwlfUQ8xzAx8Fai8XFG6XvmFPQU7ZTESlFTqJxpv_zz_PD8oFjDelJ9bfrfFxM4phQs0hSKni0C18TAT6dDwH2zIwFNBkBvevfjGRJIpCEKTzcsZ-D9jXhg_RofqPWdlTHHmcFUol-pw9OhZvgSiRCEVgz9H19tu0mR1pQEmsdNgKwCJB2_IkFViZQ4z0TL7Jq'); background-size: cover; background-position: center;">
+                </div>
+
+                <button class="mobile-toggle">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="h-screen relative flex items-center justify-center text-center overflow-hidden"
+            style="padding: 0;">
+            <div class="absolute inset-0 hero-overlay-gradient"
+                style="z-index: 1; background: linear-gradient(to right, rgba(2, 4, 8, 0.95) 0%, rgba(2, 4, 8, 0.4) 50%, rgba(2, 4, 8, 0.95) 100%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDo-70foAciW2cR5r7yADJd0SpdvopPTlclSl1cj9SFPqxAF19EqfwhmkDFJAMdz8_NXyUL1Sx5O94gT-Wqq3W-cwBigznS-_NT_cuE_ScbkRYaSGvewoZ_Ohwpyb71E36lLAPwPSQfE-zGw9JHBCVTxsd_ZSV5sENyurCedpkkUUSBpoE08olQ1XS3PFrttKRszxpwDsW0GbCyly4TooUHjqwGFPlo2rJRpmQQJKu7HJfPzQ2zwA8fbvIC-jpfE1l10R_wSzy10aCY'); background-size: cover; background-position: center;">
+            </div>
+
+            <div class="relative active container"
+                style="z-index: 2; display: flex; flex-direction: column; align-items: center;">
+                <span class="reveal delay-1 text-gold uppercase"
+                    style="font-size: 0.625rem; font-weight: 700; letter-spacing: 0.6em; margin-bottom: 1.5rem;">Meticulously
+                    Crafted Since 1984</span>
+
+                <h1 class="reveal delay-2 font-serif"
+                    style="font-size: 3.75rem; font-weight: 900; line-height: 1.05; margin-bottom: 2rem;">
+                    Artistry in <span class="italic text-gold-gradient" style="font-weight: 400;">Grain</span> &amp;
+                    <span class="italic text-gold-gradient" style="font-weight: 400;">Gold</span>
+                </h1>
+
+                <p class="reveal delay-3 text-center"
+                    style="max-width: 42rem; font-size: 1.125rem; font-weight: 300; color: var(--color-slate-400); margin-bottom: 3rem;">
+                    Where the warmth of master-hewn walnut meets the precision of modern design. Experience furniture
+                    that transcends generations.
+                </p>
+
+                <div class="reveal delay-4 flex gap-6 flex-col-mobile">
+                    <button class="btn-primary">View Portfolio</button>
+                    <button class="btn-secondary">
+                        Our Philosophy
+                        <span class="material-symbols-outlined" style="font-size: 1rem;">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="absolute"
+                style="bottom: 3rem; left: 50%; transform: translateX(-50%); animation: fadeInUp 2s infinite;">
+                <span class="material-symbols-outlined text-gold"
+                    style="font-size: 2rem; opacity: 0.5;">expand_more</span>
+            </div>
+        </section>
+
+        <section class="container" style="padding-top: 8rem; padding-bottom: 8rem;">
+            <div class="grid grid-cols-2 gap-12 items-end mb-20 flex-col-mobile">
+                <div>
+                    <h2 class="font-serif" style="font-size: 2.5rem; font-weight: 500; margin-bottom: 2rem;">The <span
+                            class="italic">Ochestra</span> Standard</h2>
+                    <div style="height: 1px; width: 8rem; background-color: rgba(212, 175, 55, 0.5);"></div>
+                </div>
+                <p style="font-size: 1.125rem; font-weight: 300; color: var(--color-slate-400);">Our suite of services
+                    covers the entire lifecycle of luxury, from the first architectural sketch to the restoration of
+                    century-old heirlooms.</p>
+            </div>
+
+            <div class="grid grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="glass-card">
+                    <div class="icon-box">
+                        <span class="material-symbols-outlined" style="font-size: 2.25rem;">architecture</span>
+                    </div>
+                    <h3 class="font-serif" style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Bespoke
+                        Design</h3>
+                    <p style="font-size: 0.875rem; color: var(--color-slate-400);">Visionary consultation transforming
+                        your spatial concepts into detailed architectural masterpieces.</p>
+                    <div class="details-link">
+                        Details <span class="material-symbols-outlined" style="font-size: 0.875rem;">north_east</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card">
+                    <div class="icon-box">
+                        <span class="material-symbols-outlined"
+                            style="font-size: 2.25rem;">precision_manufacturing</span>
+                    </div>
+                    <h3 class="font-serif" style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Manufacture
+                    </h3>
+                    <p style="font-size: 0.875rem; color: var(--color-slate-400);">The core of our atelier. Sustainable
+                        walnut hand-finished with authentic gold leaf accents.</p>
+                    <div class="details-link">
+                        Details <span class="material-symbols-outlined" style="font-size: 0.875rem;">north_east</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card">
+                    <div class="icon-box">
+                        <span class="material-symbols-outlined" style="font-size: 2.25rem;">verified_user</span>
+                    </div>
+                    <h3 class="font-serif" style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Curation
+                    </h3>
+                    <p style="font-size: 0.875rem; color: var(--color-slate-400);">Limited release ready-to-own
+                        collections available only to our private members and partners.</p>
+                    <div class="details-link">
+                        Details <span class="material-symbols-outlined" style="font-size: 0.875rem;">north_east</span>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="glass-card">
+                    <div class="icon-box">
+                        <span class="material-symbols-outlined" style="font-size: 2.25rem;">history_edu</span>
+                    </div>
+                    <h3 class="font-serif" style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Restoration
+                    </h3>
+                    <p style="font-size: 0.875rem; color: var(--color-slate-400);">Preserving the legacy of fine
+                        furniture through museum-grade artisanal repair techniques.</p>
+                    <div class="details-link">
+                        Details <span class="material-symbols-outlined" style="font-size: 0.875rem;">north_east</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wood-texture relative" style="padding: 8rem 0; overflow: hidden;">
+            <div class="absolute inset-0" style="background-color: rgba(2,4,8,0.6);"></div>
+            <div class="container relative grid grid-cols-2 gap-12 items-center flex-col-mobile">
+                <div style="position: relative;">
+                    <div style="position: absolute; inset: -1rem; border: 1px solid rgba(212,175,55,0.2); z-index: 0;">
+                    </div>
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo-70foAciW2cR5r7yADJd0SpdvopPTlclSl1cj9SFPqxAF19EqfwhmkDFJAMdz8_NXyUL1Sx5O94gT-Wqq3W-cwBigznS-_NT_cuE_ScbkRYaSGvewoZ_Ohwpyb71E36lLAPwPSQfE-zGw9JHBCVTxsd_ZSV5sENyurCedpkkUUSBpoE08olQ1XS3PFrttKRszxpwDsW0GbCyly4TooUHjqwGFPlo2rJRpmQQJKu7HJfPzQ2zwA8fbvIC-jpfE1l10R_wSzy10aCY"
+                        alt="Craftsmanship"
+                        style="position: relative; z-index: 1; filter: grayscale(100%) contrast(1.25); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);">
+                </div>
+
+                <div>
+                    <span class="text-gold uppercase"
+                        style="font-size: 0.625rem; font-weight: 700; letter-spacing: 0.5em; display: block; margin-bottom: 1.5rem;">Craftsmanship
+                        Spotlight</span>
+                    <h2 class="font-serif"
+                        style="font-size: 3rem; font-weight: 900; margin-bottom: 2rem; line-height: 1.1;">The Soul of
+                        the <span class="italic text-gold-gradient">Atelier</span></h2>
+                    <p
+                        style="font-size: 1.25rem; font-weight: 300; color: var(--color-slate-300); margin-bottom: 2.5rem;">
+                        In our midnight workshop, every chisel mark is intentional. We source only the deepest walnut
+                        burls and apply 24k gold leaf using techniques passed down through four generations of artisans.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-12"
+                        style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2.5rem;">
+                        <div>
+                            <span class="block font-serif text-gold"
+                                style="font-size: 1.875rem; margin-bottom: 0.5rem;">24k</span>
+                            <span class="uppercase"
+                                style="font-size: 0.625rem; letter-spacing: 0.2em; color: var(--color-slate-400);">Genuine
+                                Gold Finishes</span>
+                        </div>
+                        <div>
+                            <span class="block font-serif text-gold"
+                                style="font-size: 1.875rem; margin-bottom: 0.5rem;">120h</span>
+                            <span class="uppercase"
+                                style="font-size: 0.625rem; letter-spacing: 0.2em; color: var(--color-slate-400);">Average
+                                Hand-Polish Time</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" style="padding-top: 8rem; padding-bottom: 8rem;">
+            <div class="text-center mb-20">
+                <h2 class="font-serif italic" style="font-size: 3rem;">Signature Pieces</h2>
+                <div style="margin: 1.5rem auto 0; height: 1px; width: 5rem; background-color: var(--color-gold);">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-12 flex-col-mobile">
+                <!-- Item 1 -->
+                <div style="cursor: pointer;">
+                    <div class="relative" style="aspect-ratio: 4/5; overflow: hidden; background-color: #0f172a;">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAU8HGBn10LbvM4FU1--eYCrxQUJtJMD9Kzj7vSyxDRCFhGZ3c1_zZvBKzKuR3CLvqcQKyDg2oxH7jiuhrvMV85yEJXQRS8DdAAf74HMR5Y3RZzUzkPcpfXoA4pTYOG7c-fEmVUbv-pejwshXYDcbMJDKovb2ITJ7dbkbBFr29xzvxa2VEqYrUeJzG86FcVcC-cC6gv1iDcABDLaE5E7Iz4Kebg2UuzE9qsNX0XlQCnOxG6g10KvJGpBs9hxFEVzRtu0PE5o19tr7b8"
+                            alt="Chair" style="width: 100%; height: 100%; object-cover: cover;">
+                    </div>
+                    <div class="flex justify-between items-end"
+                        style="margin-top: 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1rem;">
+                        <div>
+                            <h4 class="font-serif" style="font-size: 1.25rem;">The Oslo Walnut</h4>
+                            <p class="uppercase"
+                                style="font-size: 0.625rem; letter-spacing: 0.2em; color: var(--color-slate-500); margin-top: 0.5rem;">
+                                European Walnut</p>
+                        </div>
+                        <span class="font-serif text-gold" style="font-size: 1.125rem;">$2,450</span>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div style="cursor: pointer;">
+                    <div class="relative" style="aspect-ratio: 4/5; overflow: hidden; background-color: #0f172a;">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHroCa93l3bNpZTKpl-O0l88-9R4cGo8wBPYkXaQZsdb5-Yl6MY4LYXW7I55re92Li6NABoeRQ8TV4ogWxcuRI9g8Rw_Wcfkq5x0aixPypnMixQ3l1a8MvdcaybnbzfoOA2eJXry29bRe8M478b3HDLVxcAnCwV6qZkE9JSihZN_pjDXLg1Rm90sWccogzN91iPDA74I6Y_RTviDON9EfdNAVLz-TdqR_KBcZXooNDh_tItgHwxWWtFc0i-wOMX_7Xa7nI2eJbO2XU"
+                            alt="Table" style="width: 100%; height: 100%; object-cover: cover;">
+                    </div>
+                    <div class="flex justify-between items-end"
+                        style="margin-top: 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1rem;">
+                        <div>
+                            <h4 class="font-serif" style="font-size: 1.25rem;">Aurelius Table</h4>
+                            <p class="uppercase"
+                                style="font-size: 0.625rem; letter-spacing: 0.2em; color: var(--color-slate-500); margin-top: 0.5rem;">
+                                Gold Leaf &amp; Temper</p>
+                        </div>
+                        <span class="font-serif text-gold" style="font-size: 1.125rem;">$5,800</span>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div style="cursor: pointer;">
+                    <div class="relative" style="aspect-ratio: 4/5; overflow: hidden; background-color: #0f172a;">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrF_Nv9MHy4HUe7mX9eZZhmjcjEF_vmx7T9_skFpZeIxRXosACoPo0R2UC-4vri3VgxZWd2qkV1Z6kAZ6dMEE_Kq38ZLWW9IR_HrARFDuURKFGXWGLjzg3YUvRklhDyVppDd7JpEX-JkYeWDqRwB1p28NQy3aq9_fEnPxcjCWuTC2M0Gz7bOALrH33dM35wGJ3B4GGyRpOLREysRamFtXcoM2SJVCm1HsxdjO7NKjV6P79r_Cr4YH5yKHhJVWn9fCZlVVkAJRBfP50"
+                            alt="Sofa" style="width: 100%; height: 100%; object-cover: cover;">
+                    </div>
+                    <div class="flex justify-between items-end"
+                        style="margin-top: 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1rem;">
+                        <div>
+                            <h4 class="font-serif" style="font-size: 1.25rem;">Velvet Lounge</h4>
+                            <p class="uppercase"
+                                style="font-size: 0.625rem; letter-spacing: 0.2em; color: var(--color-slate-500); margin-top: 0.5rem;">
+                                Emerald Silk Velvet</p>
+                        </div>
+                        <span class="font-serif text-gold" style="font-size: 1.125rem;">$9,200</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wood-texture" style="padding: 8rem 0; text-align: center; position: relative;">
+            <div class="absolute inset-0" style="background-color: rgba(2,4,8,0.8); z-index: 0;"></div>
+            <div class="container relative" style="max-width: 56rem; z-index: 1;">
+                <span class="material-symbols-outlined"
+                    style="font-size: 4rem; color: rgba(212, 175, 55, 0.2);">format_quote</span>
+                <blockquote style="margin-top: 2rem;">
+                    <p class="font-serif italic" style="font-size: 2.5rem; line-height: 1.3;">
+                        "Ochestra doesn't just make furniture; they curate the soul of a residence. Their walnut and
+                        gold pieces are the heartbeat of our penthouse."
+                    </p>
+                </blockquote>
+
+                <footer class="flex flex-col items-center gap-6" style="margin-top: 3rem;">
+                    <div
+                        style="width: 5rem; height: 5rem; border-radius: 50%; border: 1px solid var(--color-gold); padding: 0.25rem;">
+                        <div
+                            style="width: 100%; height: 100%; border-radius: 50%; background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD05oGSGVoFs1gDKJLAhdhli00loRJNjnX6CjLVOi_ewAUq4a87XFae4CLdJPO6hy7p7W3LwtMVV5LorV8hLheXP1PIFKYG5GDXo5_RSaFT7U475DkfL9e8DhlZNd6AnovdWSxDTwSn_jmbU4l4PJDAueg8PWqTyaJCZCd67-9AYHWoN28_JmRjXYBIzG-tanBfJV24OyRpLBExf6iCWNAjykQMdVSf2PWGcsTpoGKumrV7CZWQBy9ueFeOUn0OTiXC1hQtVuxB-Nex'); background-size: cover; background-position: center; filter: grayscale(100%);">
+                        </div>
+                    </div>
+                    <div>
+                        <p class="uppercase" style="font-size: 0.875rem; font-weight: 700;">Eleanor Rigby</p>
+                        <p class="uppercase text-gold"
+                            style="font-size: 0.625rem; letter-spacing: 0.2em; margin-top: 0.25rem;">Founder, Studio
+                            Luxe London</p>
+                    </div>
+                </footer>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="grid grid-cols-4 gap-16 flex-col-mobile">
+                    <div>
+                        <a class="flex items-center gap-2" href="#">
+                            <div class="logo-icon" style="width: 1.5rem; height: 1.5rem; padding: 0.25rem;">
+                                <svg class="text-midnight" fill="none" viewBox="0 0 48 48"
+                                    xmlns="http://www.w3.org/2000/svg" style="color: #020408;">
+                                    <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+                                </svg>
+                            </div>
+                            <h2 class="font-serif" style="font-size: 1.25rem;">OCHESTRA</h2>
+                        </a>
+                        <p style="margin-top: 2rem; font-size: 0.75rem; color: var(--color-slate-500);">
+                            Preserving the sanctity of the handmade in an age of mass production. Each Ochestra piece is
+                            signed by the master artisan who crafted it.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h5>Archives</h5>
+                        <ul>
+                            <li><a href="#">The Walnut Series</a></li>
+                            <li><a href="#">Gold Collection</a></li>
+                            <li><a href="#">Heritage Restored</a></li>
+                            <li><a href="#">Atelier Lighting</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5>Maison</h5>
+                        <ul>
+                            <li><a href="#">The Workshop</a></li>
+                            <li><a href="#">Artisans</a></li>
+                            <li><a href="#">Sustainability</a></li>
+                            <li><a href="#">Private Viewing</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5>Newsletter</h5>
+                        <p style="margin-bottom: 1.5rem; font-size: 0.75rem; color: var(--color-slate-500);">
+                            Receive private collection releases and invitations to studio events.
+                        </p>
+                        <form
+                            style="display: flex; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 0.5rem;">
+                            <input type="email" placeholder="Email Address"
+                                style="background: transparent; border: none; color: white; flex: 1; font-size: 0.75rem;">
+                            <button class="uppercase text-gold"
+                                style="font-size: 0.625rem; letter-spacing: 0.1em; font-weight: 700;">Join</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="text-center"
+                    style="margin-top: 6rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2.5rem;">
+                    <p class="uppercase"
+                        style="font-size: 0.56rem; letter-spacing: 0.4em; color: var(--color-slate-700);">© 2024
+                        Ochestra Luxury Atelier. Excellence as a Legacy.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget-btn">
+        <span class="material-symbols-outlined" style="font-size: 1.5rem;">chat_bubble</span>
+    </div>
+
+    <div class="chat-modal-window">
+        <div class="chat-header-small">
+            <span class="uppercase font-bold text-gold text-xs tracking-widest">Values Concierge</span>
+            <span class="material-symbols-outlined text-slate-500 cursor-pointer chat-close">close</span>
+        </div>
+        <div class="chat-scroll-area">
+            <div class="flex flex-col gap-4">
+                <div class="message-bubble message-concierge">
+                    Welcome to Ochestra. How may we assist you with your collection today?
+                </div>
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" class="chat-input" placeholder="Type a message...">
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

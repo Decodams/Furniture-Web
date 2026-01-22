@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Product Detail: Signature Walnut Table | Ochestra</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,700;1,400&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .material-selector-btn {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            padding: 0.125rem;
+            transition: all 0.3s ease;
+        }
+
+        .material-selector-btn.active {
+            border-color: var(--color-gold);
+            transform: scale(1.1);
+        }
+
+        .material-selector-btn:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container flex justify-between items-center">
+            <div class="logo-container">
+                <a class="logo-container" href="Index.html">
+                    <div style="width: 1.5rem; height: 1.5rem; color: var(--color-gold);">
+                        <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                    <h2 class="logo-text" style="font-size: 1.25rem;">OCHESTRA</h2>
+                </a>
+
+                <nav class="nav-menu">
+                    <a class="nav-link" href="Index.html">Home</a>
+                    <a class="nav-link" href="aboutus.html">About Us</a>
+                    <a class="nav-link" href="services.html">Service</a>
+                    <a class="nav-link" href="collections.html">Collection</a>
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </nav>
+            </div>
+
+            <div class="flex items-center gap-8">
+                <button class="nav-link hidden-lg" onclick="location.href='contact.html'"
+                    style="display: block; border: 1px solid rgba(212,175,55,0.4); padding: 0.5rem 1.5rem; color: var(--color-gold);">Inquire</button>
+                <button class="mobile-toggle">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 4rem; padding-bottom: 8rem;">
+        <!-- Breadcrumbs -->
+        <nav class="flex items-center gap-2 mb-8" style="font-size: 0.875rem; color: var(--color-slate-500);">
+            <a class="hover:text-gold" href="Index.html">Home</a>
+            <span class="material-symbols-outlined" style="font-size: 1rem;">chevron_right</span>
+            <a class="hover:text-gold" href="product.html">Dining Room</a>
+            <span class="material-symbols-outlined" style="font-size: 1rem;">chevron_right</span>
+            <span class="text-white" style="font-weight: 500;">Signature Walnut Table</span>
+        </nav>
+
+        <div class="grid grid-cols-12 gap-12 flex-col-mobile">
+            <!-- Left Column: Images (7 cols on desktop, full mobile) -->
+            <div style="grid-column: span 12;" class="md:col-span-12 lg:col-span-7 flex flex-col gap-4">
+                <div class="relative group"
+                    style="aspect-ratio: 4/3; border-radius: 0.75rem; overflow: hidden; background-color: #050a14;">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuRr4DJDE4A4riVwKpvnKA4GrnEclGCbiUxUgGi-eeuWgDRgA5V28kGkoBl_-CgN_yG32vtg70AOidaqc9AyHApnDOBsYZkaeR6Ws4b7tz3UxJewh3Uc_o7KD2wuuk6Me9nulnhtVjUeQZnKcc-9lxHkEshsOfd3B7rlsQ69B8kn-VMHeB1AAidtdTM3Iczol-6IMF3wi3E4kcORZyDQYZ2ER0BIyvNsccCUtVZXOhZS_hmq11CPcNm2ouuvl2BEjPD8xp35h2VPyh"
+                        alt="Main"
+                        style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease;">
+                    <div class="absolute bottom-6 right-6">
+                        <button
+                            style="display: flex; align-items: center; gap: 0.75rem; background-color: var(--color-gold); color: var(--color-midnight); padding: 0.75rem 1.5rem; border-radius: 9999px; font-weight: 700; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);">
+                            <span class="material-symbols-outlined">360</span>
+                            <span class="uppercase" style="font-size: 0.875rem; letter-spacing: 0.05em;">360°
+                                View</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-4 gap-4">
+                    <div
+                        style="aspect-ratio: 1; border-radius: 0.5rem; overflow: hidden; border: 2px solid var(--color-gold);">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGS5yhnMwRp4BUPbr8itKyraq15lcc7GySyve4EbBrm9zfYtrNt_Qm3Jk1NGMf5ek6WdbKLJUckBIxByXQWO0YtaqoclcmnfCpThOzaLNDr4CPCGSgB-5TbVVtwmP1QvglceUu4itu0M5ebnBWtFs9zAJ4EgevaFpRxd1UgoS64UWXhKffARQkltFGFGSCa5DkpDANeiRnnc_avuQdMNvgFtopPSNu9whJmyqOepNnAr70QRPkH3otqoxsmIGbW78R1MPBg1NgvQ1p"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div
+                        style="aspect-ratio: 1; border-radius: 0.5rem; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); opacity: 0.7; cursor: pointer;">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXnia1Zt5VVpEf1QziXJTKK9FVBKxAYm0CsXxsdbeoZm8CYuoYZK8fyH24zQnye3wxHYu9zHq1_tPZKlihcQ_WFQNLKZwPxL40S_i-DGjVtjL5ScikC6HmGDrSvKpyTCH-Uj_x673rQFBuWbUrZXHZB3oOFIPFjIew72z2kVqau65E-fcD2-7uzjBAVYArG3JwxMMAo3BEE2qVSVL53QZhQrROR_jn1swibCx4XFutpvjwYEatjOh_eFR20wYkQHibTmt7uJMkWMYI"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div
+                        style="aspect-ratio: 1; border-radius: 0.5rem; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); opacity: 0.7; cursor: pointer;">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz8iOFmLAH5uWL3J1myQEOQxJY-J3QUfp22y8VQoqgAOpnyyPT58bAikc5VJqotAqiiOtLZgAh7-WlxTFGXgtQ75foB8ALxU1v9KOpvrf9FX_V9rwtAJ5j26PAnbvt5JjAklXiasYRW4cgnuyv-sZFi4JUNF-FqAJVI_CwxzsFj2H8FyxCHQIbMYCtwXO8zrQylIUHm3g-PoRswVw0Db-SgmHiYfRiW7LVmByb_0IAERKWxPD7DfuQpPxVgzlD6QV574qeHG2JKP1X"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div
+                        style="aspect-ratio: 1; border-radius: 0.5rem; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); opacity: 0.7; cursor: pointer; position: relative;">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1XVRpCv49JulTie6310MntP1HZbEnG33ZRMP5MRqcyhER2rNOEO9nzrtNsRUiJxQygWK6QkVDktwi3f_i6xDiLNMtDtlrESGZXFlyvXdElQPw7wFlgOrPAjoySJnZ3SQmt2qqE_SVclVJDI82wQ4PCo3sK8GlCDqpU-sZXAevzPtoJVTZOFCGWTd20kP63AAEKVpYMiYqk7VrSGi__qJYcnqsaSgeJN_HsA_MllwrVnmJQcwJIaGIgI5tTGGfjVulNVlkhGq0HY6V"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                        <div
+                            style="position: absolute; inset: 0; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.875rem;">
+                            +4</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Info (5 cols on desktop) -->
+            <div style="grid-column: span 12;" class="md:col-span-12 lg:col-span-5 flex flex-col gap-8">
+                <div>
+                    <h1 class="font-serif italic text-white" style="font-size: 3rem; margin-bottom: 0.5rem;">Signature
+                        Walnut Dining Table</h1>
+                    <div class="flex items-center gap-4">
+                        <p style="font-size: 1.5rem; font-weight: 700; color: var(--color-gold);">$4,200.00</p>
+                        <div class="flex items-center text-gold" style="opacity: 0.8;">
+                            <span class="material-symbols-outlined" style="font-size: 1rem;">star</span>
+                            <span class="material-symbols-outlined" style="font-size: 1rem;">star</span>
+                            <span class="material-symbols-outlined" style="font-size: 1rem;">star</span>
+                            <span class="material-symbols-outlined" style="font-size: 1rem;">star</span>
+                            <span class="material-symbols-outlined" style="font-size: 1rem; opacity: 0.2;">star</span>
+                            <span class="uppercase"
+                                style="margin-left: 0.5rem; font-size: 0.75rem; color: var(--color-slate-400); letter-spacing: 0.05em;">(12
+                                Artisan Reviews)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Selection -->
+                <div class="flex flex-col gap-4">
+                    <p class="uppercase font-bold"
+                        style="font-size: 0.75rem; letter-spacing: 0.1em; color: var(--color-slate-400);">Material
+                        Selection</p>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center gap-2">
+                            <button class="material-selector-btn active">
+                                <div
+                                    style="width: 100%; height: 100%; border-radius: 50%; background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAzEJNFZJ62zVnKvrOoc-KkVEhAcodyo223IAwR34WutuVv6QQD_n00Dc7zoQx9m6k_qLCFi8mngXQsO7GyUrmMVTwQq0HEnlkRbOO7AfEo09AnPisGPZVFdQq4SEmtOQq2XN5JYUji0Agr8N8YrgCAP1AxFdf4OITo7VxYw5Y8ZXsPMPmw8DE80QvL4XLveQyhnUHZ5HuEPF0Q003iz2jYmAU1ny1p-_jHXKkmwpfYuw8_Mzo20xOu-TFgY0COtErYtXPAORFSRaO0'); background-size: cover; background-position: center;">
+                                </div>
+                            </button>
+                            <span class="font-bold text-gold" style="font-size: 0.625rem;">WALNUT</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2">
+                            <button class="material-selector-btn">
+                                <div
+                                    style="width: 100%; height: 100%; border-radius: 50%; background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvTtwycX53V_b5WXijFfTLgB3bzy-Fj075URBV_5eUKm8Y0iPrJTly5TrnRmtXRwxXNDWnGAUQ-G4CVnwP0W6BhS-jX_tRQYuoyTMOvGA21JPhjvQcfStqLRaZ6BqvQbICgpMvgK953nf861nC8mGStHvTBB3aCRBS2oyxg4zJyGkJRTzK4qLtL9wD-Jf8I3Z2949SEbE1VG1p_q9uhNOOX3Hp8e79YFPk1NiwnS0alv9WYWgwPS4cbcLHVJjS2V5ZivqaIQSSoA4P'); background-size: cover; background-position: center;">
+                                </div>
+                            </button>
+                            <span class="font-bold text-slate-500" style="font-size: 0.625rem;">OAK</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2">
+                            <button class="material-selector-btn">
+                                <div
+                                    style="width: 100%; height: 100%; border-radius: 50%; background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCO3Wn-RWZtQW-XNQZKNwZ-kxB7xvbzpHLb_LUVqbu7T8UySkvL8G0hzg7Npsck0icl5l68MOrU5Ij1ACo7jRF9Kdxyw2zF-fKFbGthiuP98fwr5AKzFw3UtKA18GDpcO9CirABtz3_583e8-CtCwSZwZGCdJxnQyZz3srM3feF08G_2qWysnqellZSnGCNuCec2_pceP5HZhhWC5U60u7wWhqwwr8QysalJCkxmjugpyjtTJrL2PjPOl7s4hR2IMTfFkmBVXAWoMKT'); background-size: cover; background-position: center;">
+                                </div>
+                            </button>
+                            <span class="font-bold text-slate-500" style="font-size: 0.625rem;">CHERRY</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Note -->
+                <div
+                    style="background: rgba(255,255,255,0.05); border-left: 2px solid var(--color-gold); padding: 1.5rem; border-radius: 0 0.5rem 0.5rem 0;">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="material-symbols-outlined text-gold">verified</span>
+                        <h3 class="font-bold text-sm tracking-widest uppercase">Artisan's Note</h3>
+                    </div>
+                    <p class="italic text-slate-300 font-serif" style="font-size: 1.125rem; line-height: 1.6;">"Each
+                        walnut slab is hand-selected from sustainable forests in the Appalachian Valley. We apply five
+                        layers of natural tung oil to ensure a finish that doesn't just look beautiful today, but
+                        matures into a rich patina for generations to come."</p>
+                    <p class="mt-4 text-xs font-bold text-slate-500">— Marcus Thorne, Master Carpenter</p>
+                </div>
+
+                <!-- CTA -->
+                <div class="flex flex-col gap-4">
+                    <button class="btn-primary"
+                        style="background: var(--color-gold); color: var(--color-midnight); display: flex; align-items: center; justify-content: center; gap: 0.75rem;">
+                        <span class="material-symbols-outlined">design_services</span>
+                        Inquire for Customization
+                    </button>
+                    <p class="text-center text-xs text-slate-500 italic">Current lead time: 8-12 weeks for
+                        hand-finishing.</p>
+                </div>
+
+                <!-- Accordion -->
+                <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 1rem;">
+                    <details open>
+                        <summary>Technical Specifications <span class="material-symbols-outlined">add</span></summary>
+                        <div class="accordion-content">
+                            <div class="grid grid-cols-2 gap-y-3 font-light text-slate-400">
+                                <div>Dimensions</div>
+                                <div class="text-white">96"L x 42"W x 30"H</div>
+                                <div>Seating</div>
+                                <div class="text-white">8-10 Persons</div>
+                                <div>Weight</div>
+                                <div class="text-white">185 lbs</div>
+                                <div>Finish</div>
+                                <div class="text-white">Natural Matte Oil</div>
+                            </div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Shipping &amp; Assembly <span class="material-symbols-outlined">add</span></summary>
+                        <div class="accordion-content">
+                            <p>White glove delivery included. Assembly by our certified partners.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer
+        style="padding: 5rem 0; border-top: 1px solid rgba(255,255,255,0.05); background-color: var(--color-midnight);">
+        <div class="container">
+            <div class="grid grid-cols-4 gap-12 flex-col-mobile mb-16">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div style="width: 1.5rem; height: 1.5rem; color: var(--color-gold);">
+                            <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+                            </svg>
+                        </div>
+                        <h2 class="logo-text" style="font-size: 1.25rem;">OCHESTRA</h2>
+                    </div>
+                    <p style="color: var(--color-slate-400); font-size: 0.875rem;">Defining the future of luxury living.
+                    </p>
+                </div>
+                <div>
+                    <h4
+                        style="font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: white; margin-bottom: 1.5rem;">
+                        Services</h4>
+                    <ul
+                        style="color: var(--color-slate-500); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; display: flex; flex-direction: column; gap: 1rem;">
+                        <li><a href="services.html">Bespoke Design</a></li>
+                        <li><a href="services.html">Restoration</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4
+                        style="font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: white; margin-bottom: 1.5rem;">
+                        Collection</h4>
+                    <ul
+                        style="color: var(--color-slate-500); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; display: flex; flex-direction: column; gap: 1rem;">
+                        <li><a href="collections.html">New Arrivals</a></li>
+                        <li><a href="collections.html">Heritage</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4
+                        style="font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: white; margin-bottom: 1.5rem;">
+                        Contact</h4>
+                    <ul
+                        style="color: var(--color-slate-500); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; display: flex; flex-direction: column; gap: 1rem;">
+                        <li><a href="contact.html">Inquiries</a></li>
+                        <li><a href="contact.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                style="text-align: center; color: var(--color-slate-500); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.2em;">
+                © 2024 Ochestra Black Label.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget-btn">
+        <span class="material-symbols-outlined" style="font-size: 1.5rem;">chat_bubble</span>
+    </div>
+
+    <div class="chat-modal-window">
+        <div class="chat-header-small">
+            <span class="uppercase font-bold text-gold text-xs tracking-widest">Values Concierge</span>
+            <span class="material-symbols-outlined text-slate-500 cursor-pointer chat-close">close</span>
+        </div>
+        <div class="chat-scroll-area">
+            <div class="flex flex-col gap-4">
+                <div class="message-bubble message-concierge">
+                    Welcome to the Gallery. Inquire about any piece here.
+                </div>
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" class="chat-input" placeholder="Type a message...">
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Simple logic to toggle details icon
+        document.querySelectorAll('details').forEach(detail => {
+            detail.addEventListener('toggle', () => {
+                const icon = detail.querySelector('.material-symbols-outlined');
+                if (detail.open) icon.textContent = 'remove';
+                else icon.textContent = 'add';
+            });
+            // Init
+            const icon = detail.querySelector('.material-symbols-outlined');
+            if (icon) {
+                if (detail.open) icon.textContent = 'remove';
+            }
+        });
+    </script>
+</body>
+
+</html>

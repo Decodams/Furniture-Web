@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>About Ochestra | Our Legacy</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@100..900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .timeline-node::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 3rem;
+            height: 3rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            animation: pulse-ring 2s infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container flex justify-between items-center">
+            <div class="logo-container">
+                <a class="logo-container" href="Index.html">
+                    <div style="width: 1.5rem; height: 1.5rem; color: var(--color-gold);">
+                        <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                    <h2 class="logo-text" style="font-size: 1.25rem;">OCHESTRA</h2>
+                </a>
+
+                <nav class="nav-menu">
+                    <a class="nav-link" href="Index.html">Home</a>
+                    <!-- Active Page: About Us (Hidden) -->
+                    <a class="nav-link" href="services.html">Service</a>
+                    <a class="nav-link" href="collections.html">Collection</a>
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </nav>
+            </div>
+
+            <div class="flex items-center gap-8">
+                <button class="nav-link hidden-lg" onclick="location.href='contact.html'"
+                    style="display: block; border: 1px solid rgba(212,175,55,0.4); padding: 0.5rem 1.5rem; color: var(--color-gold);">
+                    Join the Legacy
+                </button>
+                <div
+                    style="width: 2.5rem; height: 2.5rem; border-radius: 50%; background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBtDLbyx79-5Xz3sMefHMeFEBklGYa3fbuANedGAOy3VKTZy_aoYiC04i9TlmhN-0doKb9ctr8DAiuMgDnorD2QkwlwC3TFcR-fHwI7IoUhn3zXxhMw5hHZ_fi77QM_4NvU4jWUDAW24pR3twRUfXNSovXqC_6bcVwZWRWNG_G_IidWXpB3vHGLw9tJMBnXbTX1we7cKDfZDrDD46a5FK2upGyO8Ph3kOK9MhDqtBZ0vLdEOihGvdZcl27AtXXJdymXS2elvdjlSeaV'); background-size: cover; background-position: center; border: 1px solid rgba(212,175,55,0.2);">
+                </div>
+                <button class="mobile-toggle">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="container" style="padding-top: 6rem; padding-bottom: 8rem; text-align: center;">
+            <span class="text-gold uppercase font-bold" style="letter-spacing: 0.3em; font-size: 0.75rem;">Since
+                1990</span>
+            <h1 class="font-serif italic text-white" style="font-size: 3.5rem; margin: 1.5rem 0 2rem;">The Architect's
+                Hand</h1>
+            <p
+                style="font-size: 1.125rem; font-weight: 300; max-width: 42rem; margin: 0 auto; opacity: 0.8; line-height: 1.8;">
+                Ochestra was born from a desire to return to the root of furniture making—where the flaw in the wood
+                tells a story, and the finish is applied by a human hand, not a machine.
+            </p>
+        </section>
+
+        <!-- Quote -->
+        <section class="relative" style="height: 60vh; overflow: hidden;">
+            <div class="absolute inset-0"
+                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDIjZ_923s074N1h5nEu-1vJ_8VvLq4fCjWlXQp-pL7bK3YkEwTzHqA8oN5yI6lGvS2bUWDjR4cZtm9F1xKO7hV-J0nMy_3P5B6Lz4QW8eR9a2XUYo7Nkj1GqT3w4I6pZ2sC5d8vE9yH1lA7fS0mB4kZ3xJ6c5vNtn8q-L9oPQR0WwK2Y6uVIs.jpg'); background-size: cover; background-position: center; filter: grayscale(100%) brightness(0.4);">
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center container">
+                <blockquote class="text-center">
+                    <p class="font-serif italic text-white" style="font-size: 2.5rem; line-height: 1.4;">"We do not
+                        build for today. We build for the next century of conversation."</p>
+                    <cite class="block mt-8 text-gold uppercase"
+                        style="font-size: 0.75rem; letter-spacing: 0.2em; font-style: normal;">— Alessandro M.,
+                        Founder</cite>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="relative" style="background-color: var(--color-midnight-light); padding: 8rem 0;">
+            <div class="container">
+                <div class="text-center mb-20">
+                    <h2 class="text-gold font-serif italic" style="font-size: 3rem;">The Passage of Time</h2>
+                    <div style="width: 6rem; height: 1px; background-color: rgba(212,175,55,0.3); margin: 1rem auto;">
+                    </div>
+                </div>
+
+                <div class="relative" style="max-width: 64rem; margin: 0 auto;">
+                    <!-- Timeline Line -->
+                    <div class="absolute"
+                        style="left: 50%; top: 0; bottom: 0; width: 2px; background-color: var(--color-walnut); transform: translateX(-50%);">
+                    </div>
+
+                    <!-- Item 1 -->
+                    <div class="relative flex justify-between items-center mb-20 flex-col-mobile">
+                        <div style="width: 45%; text-align: right; padding-right: 2rem;" class="flex-col-mobile">
+                            <span class="text-gold font-serif italic"
+                                style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">1990</span>
+                            <h3 class="uppercase" style="font-size: 1.125rem; letter-spacing: 0.1em;">The Florentine
+                                Genesis</h3>
+                            <p style="font-size: 0.875rem; color: var(--color-slate-400); margin-top: 1rem;">In a humble
+                                studio overlooking the Arno, the first Ochestra joints were cut. A marriage of lutherie
+                                techniques and master cabinetry.</p>
+                        </div>
+                        <div class="z-10 bg-gold timeline-node"
+                            style="width: 1.5rem; height: 1.5rem; border-radius: 50%;"></div>
+                        <div style="width: 45%;" class="visible-lg">
+                            <!-- Image placeholder or just empty for balance -->
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="relative flex justify-between items-center mb-20 flex-col-mobile">
+                        <div style="width: 45%;" class="visible-lg"></div>
+                        <div class="z-10 bg-gold timeline-node"
+                            style="width: 1.5rem; height: 1.5rem; border-radius: 50%;"></div>
+                        <div style="width: 45%; text-align: left; padding-left: 2rem;" class="flex-col-mobile">
+                            <span class="text-gold font-serif italic"
+                                style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">2005</span>
+                            <h3 class="uppercase" style="font-size: 1.125rem; letter-spacing: 0.1em;">Global Resonance
+                            </h3>
+                            <p style="font-size: 0.875rem; color: var(--color-slate-400); margin-top: 1rem;">
+                                International acclaim followed our 'Cello' chair series, earning the brand a place in
+                                permanent museum collections across Europe.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="relative flex justify-between items-center flex-col-mobile">
+                        <div style="width: 45%; text-align: right; padding-right: 2rem;" class="flex-col-mobile">
+                            <span class="text-gold font-serif italic"
+                                style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">Present Day</span>
+                            <h3 class="uppercase" style="font-size: 1.125rem; letter-spacing: 0.1em;">Sustainability
+                                &amp; Tech</h3>
+                            <p style="font-size: 0.875rem; color: var(--color-slate-400); margin-top: 1rem;">Merging
+                                traditional dovetail joinery with precision digital acoustic mapping to create the next
+                                generation of sensory furniture.</p>
+                        </div>
+                        <div class="z-10 bg-gold timeline-node"
+                            style="width: 1.5rem; height: 1.5rem; border-radius: 50%;"></div>
+                        <div style="width: 45%;" class="visible-lg"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" style="padding: 8rem 0;">
+            <div class="flex justify-between items-end mb-20 flex-col-mobile gap-6">
+                <div>
+                    <h2 class="font-serif italic" style="font-size: 3rem;">The Masters</h2>
+                    <p style="color: var(--color-slate-500);">The hands and minds behind the Ochestra legacy.</p>
+                </div>
+                <button class="nav-link text-gold">Join the Atelier <span class="material-symbols-outlined"
+                        style="vertical-align: middle;">arrow_right_alt</span></button>
+            </div>
+
+            <div class="grid grid-cols-3 gap-12 flex-col-mobile">
+                <!-- Master 1 -->
+                <div>
+                    <div style="aspect-ratio: 3/4; overflow: hidden; margin-bottom: 1.5rem;">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1QSgmvYgr4QvE8dnyM_RiXlgnILTMoEpQdNvagEzSIoZ7ou6Cf5mq7JsdN1oYudP3ogkRNEA0kzFbdstPJ73mJ-T2g3RuRS6j7b371QR9dnY3hFGIt7OsUBcdsfY-jGMOmpbocZ7g2TwQL_Xs4y4e2wbPo4DyT_j0L2TibZalZrrZoRM8ysRKPcgy8wJCTv1JTVsvyhTUAt6XzDKk16vGl85m8niwzFLCuijA84QyKhjm_MC62_fCdiH3zwNXLgnU6Kswiyy98jaw"
+                            alt="Antonio"
+                            style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%);">
+                    </div>
+                    <h3 class="font-serif italic" style="font-size: 1.25rem;">Antonio Rossi</h3>
+                    <p class="uppercase text-gold"
+                        style="font-size: 0.625rem; letter-spacing: 0.2em; margin-top: 0.5rem;">Chief Curator</p>
+                </div>
+
+                <!-- Master 2 (Offset on Desktop) -->
+                <div style="transform: translateY(3rem);">
+                    <div style="aspect-ratio: 3/4; overflow: hidden; margin-bottom: 1.5rem;">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbhZKjdbbHtIqXbFeFyHelsuPl4m_b5FuNVgfSgKaiPSgM7BLhJegPa4FXBm9RdXj5VCaIErBagYhriBD9orkP2wnZTHMyb_DBGyFeTP16palPUjcKeKF0EaVoeJ1IN_CKeaUCLkETDBdT5MH4xp7ODqhdkP1DKXVCdRcSzjZ9nSn1pxWsdcWsslJP5Al0gI0F8J5-WNObwzc2sm_OZ4PsRq_K6U1AubYgd-50Olnj5MQb74JlwYi3kweJ8QXBnMZcq9Wr_O97snzi"
+                            alt="Elena" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%);">
+                    </div>
+                    <h3 class="font-serif italic" style="font-size: 1.25rem;">Elena Valvo</h3>
+                    <p class="uppercase text-gold"
+                        style="font-size: 0.625rem; letter-spacing: 0.2em; margin-top: 0.5rem;">Lead Interior Architect
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer
+        style="padding: 5rem 0; border-top: 1px solid rgba(255,255,255,0.05); background-color: var(--color-midnight);">
+        <div class="container">
+            <div class="grid grid-cols-4 gap-12 flex-col-mobile mb-16">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div style="width: 1.5rem; height: 1.5rem; color: var(--color-gold);">
+                            <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+                            </svg>
+                        </div>
+                        <h2 class="logo-text" style="font-size: 1.25rem;">OCHESTRA</h2>
+                    </div>
+                    <p style="color: var(--color-slate-400); font-size: 0.875rem;">Defining the future of luxury living.
+                    </p>
+                </div>
+                <div>
+                    <h4
+                        style="font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: white; margin-bottom: 1.5rem;">
+                        Services</h4>
+                    <ul
+                        style="color: var(--color-slate-500); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; display: flex; flex-direction: column; gap: 1rem;">
+                        <li><a href="services.html">Bespoke Design</a></li>
+                        <li><a href="services.html">Restoration</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4
+                        style="font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: white; margin-bottom: 1.5rem;">
+                        Collection</h4>
+                    <ul
+                        style="color: var(--color-slate-500); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; display: flex; flex-direction: column; gap: 1rem;">
+                        <li><a href="collections.html">New Arrivals</a></li>
+                        <li><a href="collections.html">Heritage</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4
+                        style="font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: white; margin-bottom: 1.5rem;">
+                        Contact</h4>
+                    <ul
+                        style="color: var(--color-slate-500); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; display: flex; flex-direction: column; gap: 1rem;">
+                        <li><a href="contact.html">Inquiries</a></li>
+                        <li><a href="contact.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                style="text-align: center; color: var(--color-slate-500); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.2em;">
+                © 2024 Ochestra Black Label.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget-btn">
+        <span class="material-symbols-outlined" style="font-size: 1.5rem;">chat_bubble</span>
+    </div>
+
+    <div class="chat-modal-window">
+        <div class="chat-header-small">
+            <span class="uppercase font-bold text-gold text-xs tracking-widest">Legacy Concierge</span>
+            <span class="material-symbols-outlined text-slate-500 cursor-pointer chat-close">close</span>
+        </div>
+        <div class="chat-scroll-area">
+            <div class="flex flex-col gap-4">
+                <div class="message-bubble message-concierge">
+                    Welcome to Legacy Support. How may we assist?
+                </div>
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" class="chat-input" placeholder="Type a message...">
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
