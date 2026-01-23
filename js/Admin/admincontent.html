@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ochestra Admin: Content &amp; CMS</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,FILL@0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ecb613",
+                        "background-light": "#f8f8f6",
+                        "background-dark": "#181611",
+                        "surface-dark": "#221d10",
+                        "border-dark": "#393528",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .tab-content {
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+    <div class="flex flex-col h-screen">
+        <!-- Top Nav Bar -->
+        <header class="flex items-center justify-between border-b border-border-dark bg-background-dark px-8 py-3 z-50">
+            <div class="flex items-center gap-8">
+                <div class="flex items-center gap-3">
+                    <div class="size-6 text-primary">
+                        <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z"
+                                fill="currentColor"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-white text-lg font-bold tracking-tight">Ochestra Admin</h2>
+                </div>
+                <div class="h-6 w-px bg-border-dark"></div>
+                <nav class="flex items-center gap-6">
+                    <a class="text-white/60 hover:text-white text-sm font-medium transition-colors"
+                        href="admindashboard.html">Dashboard</a>
+                    <a class="text-white text-sm font-medium border-b-2 border-primary pb-1 mt-1" href="#">CMS</a>
+                </nav>
+            </div>
+        </header>
+        <div class="flex flex-1 overflow-hidden">
+            <!-- Sidebar Navigation -->
+            <aside class="w-64 border-r border-border-dark bg-surface-dark p-6 flex flex-col justify-between">
+                <div class="flex flex-col gap-8">
+                    <div>
+                        <p class="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-4">Content Assets</p>
+                        <div class="flex flex-col gap-1">
+                            <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary text-background-dark font-semibold"
+                                href="#">
+                                <span class="material-symbols-outlined">collections</span>
+                                <span class="text-sm">Gallery Manager</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!-- Main Content Area -->
+            <main class="flex-1 overflow-y-auto bg-background-dark">
+                <!-- Page Header -->
+                <div class="px-10 pt-10 pb-6 border-b border-border-dark/50">
+                    <h1 class="text-white text-4xl font-black tracking-tighter mb-2">CMS Manager</h1>
+                    <p class="text-white/50 text-base">Update your website gallery and videos in real-time.</p>
+                </div>
+                <!-- Tabs -->
+                <div class="px-10 border-b border-border-dark/30 flex gap-10">
+                    <button
+                        class="py-4 text-sm font-bold text-primary border-b-2 border-primary relative tab-btn active"
+                        data-tab="gallery">
+                        Gallery Items
+                    </button>
+                    <button class="py-4 text-sm font-bold text-white/40 hover:text-white transition-colors tab-btn"
+                        data-tab="videos">
+                        Videos
+                    </button>
+                </div>
+
+                <div class="p-10">
+                    <!-- Gallery Section -->
+                    <div id="gallery-tab-content" class="tab-content">
+                        <div class="mb-10 p-6 bg-surface-dark rounded-xl border border-border-dark">
+                            <h3 class="text-white font-bold mb-4">Add Piece to Collection</h3>
+                            <form id="gallery-form" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                <input type="text" id="gallery-title" placeholder="Piece Title"
+                                    class="bg-background-dark border-border-dark rounded-lg text-sm text-white p-2"
+                                    required>
+                                <input type="url" id="gallery-image" placeholder="Image URL"
+                                    class="bg-background-dark border-border-dark rounded-lg text-sm text-white p-2"
+                                    required>
+                                <select id="gallery-category"
+                                    class="bg-background-dark border-border-dark rounded-lg text-sm text-white p-2">
+                                    <option value="Modern">Modern</option>
+                                    <option value="Vintage">Vintage</option>
+                                    <option value="Commercial">Commercial</option>
+                                    <option value="Archives">Archives</option>
+                                </select>
+                                <button type="submit"
+                                    class="bg-primary text-background-dark font-bold rounded-lg text-sm py-2">Publish
+                                    Piece</button>
+                            </form>
+                        </div>
+                        <div class="stack-grid" id="admin-gallery-grid">
+                            <!-- Dynamic items -->
+                        </div>
+                    </div>
+
+                    <!-- Video Section -->
+                    <div id="videos-tab-content" class="tab-content" style="display: none;">
+                        <div class="mb-10 p-6 bg-surface-dark rounded-xl border border-border-dark">
+                            <h3 class="text-white font-bold mb-4">Add Cinematic Video</h3>
+                            <form id="video-form" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                <input type="text" id="video-title" placeholder="Video Title"
+                                    class="bg-background-dark border-border-dark rounded-lg text-sm text-white p-2"
+                                    required>
+                                <div
+                                    class="relative flex items-center bg-background-dark border border-border-dark rounded-lg px-2">
+                                    <span class="text-xs text-white/40 mr-2">File:</span>
+                                    <input type="file" id="video-file" accept="video/*"
+                                        class="w-full text-xs text-white file:hidden bg-transparent py-2 cursor-pointer">
+                                </div>
+                                <input type="url" id="video-url" placeholder="Or Video URL (.mp4)"
+                                    class="bg-background-dark border-border-dark rounded-lg text-sm text-white p-2">
+                                <button type="submit"
+                                    class="bg-primary text-background-dark font-bold rounded-lg text-sm py-2">Add Videos
+                                    +</button>
+                            </form>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="admin-video-grid">
+                            <!-- Dynamic items -->
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <script>
+            // Tab Logic
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.tab-btn').forEach(b => {
+                        b.classList.remove('text-primary', 'border-b-2', 'border-primary', 'active');
+                        b.classList.add('text-white/40');
+                    });
+                    btn.classList.add('text-primary', 'border-b-2', 'border-primary', 'active');
+                    btn.classList.remove('text-white/40');
+
+                    document.querySelectorAll('.tab-content').forEach(content => {
+                        content.style.display = 'none';
+                    });
+                    document.getElementById(btn.dataset.tab + '-tab-content').style.display = 'block';
+                });
+            });
+
+            // Gallery Content Logic
+            const galleryForm = document.getElementById('gallery-form');
+            const adminGalleryGrid = document.getElementById('admin-gallery-grid');
+
+            function loadAdminGallery() {
+                const items = JSON.parse(localStorage.getItem('ochestra_collection') || '[]');
+                adminGalleryGrid.innerHTML = items.map((item, index) => `
+            <div class="relative group rounded-xl bg-surface-dark border border-border-dark overflow-hidden p-4">
+                <img src="${item.image}" class="w-full h-32 object-cover rounded-lg mb-2">
+                <h4 class="text-white text-sm font-bold">${item.title}</h4>
+                <p class="text-gold text-xs uppercase">${item.category}</p>
+                <button onclick="removeGalleryItem(${index})" class="absolute top-2 right-2 size-8 bg-red-500 rounded-lg text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="material-symbols-outlined" style="font-size: 16px;">delete</span>
+                </button>
+            </div>
+        `).join('');
+            }
+
+            if (galleryForm) {
+                galleryForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const items = JSON.parse(localStorage.getItem('ochestra_collection') || '[]');
+                    items.push({
+                        title: document.getElementById('gallery-title').value,
+                        image: document.getElementById('gallery-image').value,
+                        category: document.getElementById('gallery-category').value
+                    });
+                    localStorage.setItem('ochestra_collection', JSON.stringify(items));
+                    galleryForm.reset();
+                    loadAdminGallery();
+                    alert('Gallery piece saved locally!');
+                });
+            }
+
+            window.removeGalleryItem = (index) => {
+                if (confirm('Delete this piece?')) {
+                    const items = JSON.parse(localStorage.getItem('ochestra_collection') || '[]');
+                    items.splice(index, 1);
+                    localStorage.setItem('ochestra_collection', JSON.stringify(items));
+                    loadAdminGallery();
+                }
+            };
+
+            // Video Content Logic
+            const videoForm = document.getElementById('video-form');
+            const adminVideoGrid = document.getElementById('admin-video-grid');
+
+            function loadAdminVideos() {
+                const videos = JSON.parse(localStorage.getItem('ochestra_videos') || '[]');
+                adminVideoGrid.innerHTML = videos.map((video, index) => `
+            <div class="relative group rounded-xl bg-surface-dark border border-border-dark overflow-hidden p-4">
+                <img src="${video.thumbnail || 'https://images.unsplash.com/photo-1581421046129-0717272ba712?auto=format&fit=crop&q=80'}" class="w-full h-40 object-cover rounded-lg mb-2">
+                <h4 class="text-white text-sm font-bold">${video.title}</h4>
+                <button onclick="removeVideoItem(${index})" class="absolute top-2 right-2 size-8 bg-red-500 rounded-lg text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="material-symbols-outlined" style="font-size: 16px;">delete</span>
+                </button>
+            </div>
+        `).join('');
+            }
+
+            if (videoForm) {
+                videoForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const videos = JSON.parse(localStorage.getItem('ochestra_videos') || '[]');
+                    const fileInput = document.getElementById('video-file');
+                    const urlInput = document.getElementById('video-url');
+
+                    let videoUrl = urlInput.value;
+
+                    if (fileInput.files && fileInput.files[0]) {
+                        // In a real app, you'd upload this to a server. 
+                        // For demo/localStorage, we can use a Blob URL, but it won't persist across sessions.
+                        // We'll simulate it by using the filename or a dummy placeholder if no URL is provided.
+                        videoUrl = URL.createObjectURL(fileInput.files[0]);
+                    }
+
+                    videos.push({
+                        title: document.getElementById('video-title').value,
+                        url: videoUrl || 'https://www.w3schools.com/html/mov_bbb.mp4',
+                        thumbnail: 'https://images.unsplash.com/photo-1581421046129-0717272ba712?auto=format&fit=crop&q=80'
+                    });
+                    localStorage.setItem('ochestra_videos', JSON.stringify(videos));
+                    videoForm.reset();
+                    loadAdminVideos();
+                    alert('Video added to the collection!');
+                });
+            }
+
+            window.removeVideoItem = (index) => {
+                if (confirm('Delete this video?')) {
+                    const videos = JSON.parse(localStorage.getItem('ochestra_videos') || '[]');
+                    videos.splice(index, 1);
+                    localStorage.setItem('ochestra_videos', JSON.stringify(videos));
+                    loadAdminVideos();
+                }
+            };
+
+            loadAdminGallery();
+            loadAdminVideos();
+        </script>
+</body>
+
+</html>

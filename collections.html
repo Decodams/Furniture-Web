@@ -14,22 +14,216 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         .filter-btn {
-            background: none;
-            border: none;
-            color: rgba(212, 175, 55, 0.5);
-            font-size: 0.625rem;
+            background: transparent;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            color: rgba(212, 175, 55, 0.6);
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 0.4em;
-            padding-bottom: 0.25rem;
-            border-bottom: 1px solid transparent;
+            letter-spacing: 0.2em;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            font-weight: 500;
         }
 
-        .filter-btn:hover,
-        .filter-btn.active {
+        .filter-btn:hover {
+            border-color: var(--color-gold);
             color: var(--color-gold);
-            border-bottom-color: rgba(212, 175, 55, 0.3);
+            background: rgba(212, 175, 55, 0.05);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.1);
+        }
+
+        .filter-btn.active {
+            color: var(--color-midnight);
+            background: var(--color-gold);
+            border-color: var(--color-gold);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Video Gallery Styles */
+        .video-card {
+            position: relative;
+            aspect-ratio: 16/9;
+            border-radius: 1rem;
+            overflow: hidden;
+            background: #050a14;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        .video-card:hover {
+            transform: scale(1.02);
+            border-color: var(--color-gold);
+        }
+
+        .video-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            transition: opacity 0.5s ease;
+        }
+
+        .video-card:hover img {
+            opacity: 0.8;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 4rem;
+            height: 4rem;
+            background: var(--color-gold);
+            color: var(--color-midnight);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+            transition: all 0.4s ease;
+        }
+
+        .video-card:hover .play-icon {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: white;
+        }
+
+        /* Slider Styles */
+        .video-slider-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+
+        .video-slider-wrapper {
+            display: flex;
+            gap: 2rem;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            scroll-behavior: smooth;
+        }
+
+        .video-slider-wrapper .video-card {
+            flex: 0 0 calc(33.333% - 1.35rem);
+            /* Default 3 side-by-side */
+            min-width: 300px;
+        }
+
+        @media (max-width: 1024px) {
+            .video-slider-wrapper .video-card {
+                flex: 0 0 calc(50% - 1rem);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .video-slider-wrapper .video-card {
+                flex: 0 0 100%;
+            }
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .slider-control-btn {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-gold);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(10, 11, 16, 0.5);
+            backdrop-filter: blur(8px);
+        }
+
+        .slider-control-btn:hover {
+            background: var(--color-gold);
+            color: var(--color-midnight);
+            border-color: var(--color-gold);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .slider-control-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            border-color: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .masonry-grid {
+            column-count: 3;
+            column-gap: 2rem;
+            width: 100%;
+        }
+
+        .masonry-item {
+            position: relative;
+            break-inside: avoid;
+            margin-bottom: 2rem;
+            border-radius: 1rem;
+            overflow: hidden;
+            background: #050a14;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @media (max-width: 1024px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .masonry-grid {
+                column-gap: 1.5rem;
+            }
+
+            .masonry-item {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .masonry-grid {
+                column-count: 1;
+            }
+        }
+
+        .masonry-item.hidden {
+            display: none;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .masonry-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(2, 4, 8, 0.9) 0%, rgba(2, 4, 8, 0.3) 50%, rgba(2, 4, 8, 0.9) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .masonry-item:hover .masonry-overlay {
+            opacity: 1;
+        }
+
+        .masonry-item:hover img {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -39,8 +233,9 @@
         <div class="container flex justify-between items-center">
             <div class="logo-container">
                 <a class="logo-container" href="index.html">
-                    <div style="width: 1.5rem; height: 1.5rem; color: var(--color-gold);">
-                        <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <div class="logo-icon">
+                        <svg class="text-midnight" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"
+                            style="color: #020408;">
                             <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
                         </svg>
                     </div>
@@ -48,21 +243,28 @@
                 </a>
 
                 <nav class="nav-menu">
-                    <a class="nav-link" href="index.html">Home</a>
-                    <a class="nav-link" href="aboutus.html">About Us</a>
-                    <a class="nav-link" href="services.html">Service</a>
-                    <!-- Active Page: Collection (Hidden) -->
-                    <a class="nav-link" href="contact.html">Contact</a>
+                    <a class="nav-link" href="index.html" id="nav-home">Home</a>
+                    <a class="nav-link" href="aboutus.html" id="nav-about">About Us</a>
+                    <a class="nav-link" href="services.html" id="nav-services">Service</a>
+                    <a class="nav-link" href="collections.html" id="nav-collections">Collection</a>
+                    <a class="nav-link" href="contact.html" id="nav-contact">Contact</a>
                 </nav>
             </div>
 
             <div class="flex items-center gap-8">
-                <button class="nav-link hidden-lg" onclick="location.href='contact.html'"
-                    style="display: block; border: 1px solid rgba(212,175,55,0.4); padding: 0.5rem 1.5rem; color: var(--color-gold);">Private
-                    Inquiry</button>
-                <button class="mobile-toggle">
-                    <span class="material-symbols-outlined">menu</span>
-                </button>
+                <div class="search-container">
+                    <span class="material-symbols-outlined search-icon">search</span>
+                    <input class="search-input" id="gallery-search" placeholder="Search archive..." type="text" />
+                </div>
+
+                <div class="flex items-center gap-8">
+                    <button class="nav-link hidden-lg" onclick="location.href='project.html'"
+                        style="display: block; background-color: var(--color-gold); color: var(--color-midnight); padding: 0.5rem 1.5rem;">Your
+                        Project</button>
+                    <button class="mobile-toggle">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
@@ -83,17 +285,20 @@
             </p>
         </div>
 
-        <div class="flex justify-center gap-12 mb-20 overflow-x-auto" style="padding-bottom: 1rem;">
-            <button class="filter-btn active">All Works</button>
-            <button class="filter-btn">Modern</button>
-            <button class="filter-btn">Vintage</button>
-            <button class="filter-btn">Commercial</button>
-            <button class="filter-btn">Archives</button>
+        <div class="flex justify-center flex-wrap gap-8 md:gap-12 mt-16 mb-24">
+            <button class="filter-btn active" data-filter="all">All Works</button>
+            <button class="filter-btn" data-filter="Modern">Modern</button>
+            <button class="filter-btn" data-filter="Vintage">Vintage</button>
+            <button class="filter-btn" data-filter="Commercial">Commercial</button>
+            <button class="filter-btn" data-filter="Archives">Archives</button>
+            <button class="text-primary text-[10px] font-bold uppercase tracking-widest hover:underline"
+                id="clear-filters">Clear Selection</button>
         </div>
 
-        <div class="masonry-grid">
+        <div class="masonry-grid" id="gallery-grid">
+            <!-- Items will be injected here or kept as static with categories -->
             <!-- Item 1 -->
-            <div class="masonry-item inner-glow">
+            <div class="masonry-item inner-glow" data-category="Archives">
                 <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVyR51vPrBNIeBduGsuClnza94XkQT4egrCEtiZHrQW66hE6QKv1DdzZ6tWWkyO-AJPZ4yG33a0mRoDybwlwk4MOeD_crY7DF-tdSmJPFs25Z_1UbO-I3jwkjGsCUzvyhDe0IipJgfaoi6MHYwq1N3wLO-rnRLVm0sf797IVVsuPGTIEYFudEJwU_AH5q6I5nVCfyCbdbHp6G6hrxm8mRc7xjIEYB_fc_3Sa-uRz1EQCOh87gKWBgj1vB_M-3-QaVc16W6dvXVZVls"
                     class="cinematic-transition w-full" alt="Oak">
                 <div class="masonry-overlay">
@@ -104,7 +309,7 @@
             </div>
 
             <!-- Item 2 -->
-            <div class="masonry-item inner-glow">
+            <div class="masonry-item inner-glow" data-category="Commercial">
                 <img src="https://osmaxin.github.io/decodams-images/Children.jpg" class="cinematic-transition w-full"
                     alt="Atrium" onerror="this.src='Image/Children.jpg'">
                 <div class="masonry-overlay">
@@ -115,7 +320,7 @@
             </div>
 
             <!-- Item 3 -->
-            <div class="masonry-item inner-glow">
+            <div class="masonry-item inner-glow" data-category="Vintage">
                 <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV0QTIGbYXQaBt54Rnt2eX-amAQbFa5_URBkqszJk-OjcGtFpoYL5eSYuqO14uOUZuKaPOhUr2khZbSQjl0qn1xz0AgZ6TBVju8FAAkx_FHagzFdui8sK85GrcpmlJaESolM0TsWEKVycdNUow_Srx5uAZ7wjBgH2Lbjbm9Kt--cdMJKwNk6d0MxYvSALDg-Lu81vTiRT-AG15PFVvOQcFEhmurlqv4JB7slHWBEaGe7tqzByt7oD9w953TIL7SA85WHgazGmmQxiU"
                     class="cinematic-transition w-full" alt="Victorian">
                 <div class="masonry-overlay">
@@ -126,7 +331,7 @@
             </div>
 
             <!-- Item 4 -->
-            <div class="masonry-item inner-glow">
+            <div class="masonry-item inner-glow" data-category="Modern">
                 <img src="Image/Shelf.jpg" class="cinematic-transition w-full" alt="Shelf">
                 <div class="masonry-overlay">
                     <span class="text-gold uppercase"
@@ -136,7 +341,7 @@
             </div>
 
             <!-- Item 5 -->
-            <div class="masonry-item inner-glow">
+            <div class="masonry-item inner-glow" data-category="Modern">
                 <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYyj4iZnSswsHrYSmh8o9e3tZLTiNjaqsMTDUK9PyU5umNQXNlxQsEZ-rhuYcss-rrJs2epGK0WjpvuujFJSgPGxFNy1gU2lyZtJlGH3u7W7V1R77Rg7zb8UfjzrnQEIddqIJjeS0m1TQe02ZnNsjPcisLFbgzlxzFbrLva8Xj6lAuzvK4iYZbBCp-Y52ujUuAttnykB6W_1J_9QxIYhp-V3lVpZJPtr5prCeTVaHcWCSH1yS_EOYLH6H-39DrE4IFFb33dFVj4xyx"
                     class="cinematic-transition w-full" alt="Suite">
                 <div class="masonry-overlay">
@@ -146,33 +351,14 @@
                 </div>
             </div>
 
-            <!-- Item 6 -->
-            <div class="masonry-item inner-glow">
-                <img src="Image/Office.jpg" class="cinematic-transition w-full" alt="Office">
+            <!-- Additional items from the user's version -->
+            <div class="masonry-item inner-glow" data-category="Modern">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHralh97sDJo5WCdFSAXUtnRCCJOSN-ec1McuaLsg_ATrnAL2MtHig7og3Ls4anIRTPKMvp4AXU1R_SOFPbHFwN1JI4FFNF5JFS1LncgKiuCp7Wx1Y12Rxv5MPtL1yj4LsC2gkn0hWzVA1VmYMJs5TtKkk0jNSSByqaFbTDG90Zpdh9kUlriRizRHUkNUoZx7_rl2lNTcdisoglRfyeVTWw15ONhrVaMBOzedv1KCrOLWrPV5QZHRoyraeNtzDZKjgJfC55E3_Ctlm"
+                    class="cinematic-transition w-full" alt="Walnut Detail">
                 <div class="masonry-overlay">
                     <span class="text-gold uppercase"
-                        style="font-size: 0.625rem; letter-spacing: 0.4em; margin-bottom: 0.75rem;">Interior</span>
-                    <h3 class="font-serif italic text-white" style="font-size: 1.5rem;">Office Sanctuary</h3>
-                </div>
-            </div>
-
-            <!-- Item 7 -->
-            <div class="masonry-item inner-glow">
-                <img src="Image/Dinning.jpg" class="cinematic-transition w-full" alt="Dining">
-                <div class="masonry-overlay">
-                    <span class="text-gold uppercase"
-                        style="font-size: 0.625rem; letter-spacing: 0.4em; margin-bottom: 0.75rem;">Interior</span>
-                    <h3 class="font-serif italic text-white" style="font-size: 1.5rem;">Royal Dining</h3>
-                </div>
-            </div>
-
-            <!-- Item 8 -->
-            <div class="masonry-item inner-glow">
-                <img src="Image/Bedroom2.jpg" class="cinematic-transition w-full" alt="Bedroom">
-                <div class="masonry-overlay">
-                    <span class="text-gold uppercase"
-                        style="font-size: 0.625rem; letter-spacing: 0.4em; margin-bottom: 0.75rem;">Modern</span>
-                    <h3 class="font-serif italic text-white" style="font-size: 1.5rem;">Serenity Lounge</h3>
+                        style="font-size: 0.625rem; letter-spacing: 0.4em; margin-bottom: 0.75rem;">Detail</span>
+                    <h3 class="font-serif italic text-white" style="font-size: 1.5rem;">Walnut Dovetail Study</h3>
                 </div>
             </div>
         </div>
@@ -181,37 +367,85 @@
             style="height: 1px; width: 100%; background: linear-gradient(to right, transparent, rgba(212,175,55,0.3), transparent); margin: 8rem 0;">
         </div>
 
-        <div class="mb-24">
+        <!-- Video Gallery Section -->
+        <div class="mb-32">
             <div class="text-center mb-16">
-                <h3 class="font-serif italic" style="font-size: 2rem; margin-bottom: 1rem;">The Workshop Journals</h3>
-                <p class="uppercase text-gold" style="font-size: 0.75rem; letter-spacing: 0.3em; opacity: 0.6;">Follow
-                    the process @ochestra_designs</p>
+                <span class="text-gold uppercase"
+                    style="font-size: 0.625rem; font-weight: 700; letter-spacing: 0.5em; display: block; margin-bottom: 1.5rem;">Cinematic
+                    Experience</span>
+                <h3 class="font-serif italic" style="font-size: 3rem; margin-bottom: 1rem;">The Motion Gallery</h3>
+                <p class="text-slate-400 italic" style="font-size: 1.125rem; font-weight: 300;">Visualizing our artisan
+                    process and the spirit of craftsmanship.</p>
             </div>
 
-            <div class="walnut-frame p-8" style="background-color: #121212;">
-                <div class="grid grid-cols-6 gap-6 flex-col-mobile">
-                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEKHWfT4qPpx8LiffoXD4ig9e8OSldOCg9PxrjYkon_1_I9vtRI9KDqnNwjwMsvWYyyyqgbYaiRH3KDmE76XtL-V0vswHTLHQNVkPVa7dmJyAXW5-A-UiVUbRz_iMYRNLtstci0SvUpPn-d81CWrBP0dWQ5kib3Bp2EEYQMlqisT7pv3VJDSpECnSysnwb7UnWih8SgXh5GMl2VdIsP-7bv1piZMb0fYq3m78MIh4g0czr3nF8svXGOucE78_e7POFbo7evQiVcGQr"
-                        class="aspect-square object-cover grayscale hover:grayscale-0 transition-all">
-                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHGQegrasVK8TmDlMR1mFm7JeFZTswy_jMHJ-VX0EDmHUF-O3VDKsEV0SahX_zgcOmgko6Kb26PK-h504o20hIExByG6ch_UI1_12NNvxSrHcx8074ad1fM-ijDNuCas-BYqVbiKFrdlXE-XhG_fHeGdPH5fsCR8LmY6kEYqYXiphYCzIzCSqani6_4SVFLpLh4-9uDYXWNsNbw53-YsT7W_oWIGWRD02iUErKliAP28ewxXJ3qAKZ_kwO28mXH0dg9jgS5EpuJJGB"
-                        class="aspect-square object-cover grayscale hover:grayscale-0 transition-all">
-                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD59oXUAr4cbN-DQjgS9JagGmaRXn8DStnHuNk8LKTBwxlHZa1yJIX7Q7pCEtYwZ_pOZ8X7A6-fmLpdK4xwS4y8XGQ8y2aRlnR4-3WHT2lI5RD_-5XB3uEVfKitgkKDLQJkeZb4MRT0jLYsVU_MlTPB5LIe8O9T4I4JfRQ0hsMGHhtZCSNzEbHHI4eGVilmXtkn0lZhduJZ34Lmwd_kzSHjYt2VWuBVg8O-FFFkB8rCewze0_xZO_hyn7buiiWaw0migK3z90VApn1H"
-                        class="aspect-square object-cover grayscale hover:grayscale-0 transition-all">
-                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbFZ1mcVgT37nTgV44YPS4oUhw_Up4PxFtiXFz1oVxEokbtLODldZEhkJEaiBScm_sZzy6DSwpfyGAOvl1FgnZ-FjGcE5Elj1GJqZtjqAS_gLdJGRwYtl-N0K292PK8XwH-Lz16RvB9vgFciyTl9PnLytpHuThFcs3Omid-xMyGnweFhGdoN0UTg0K9muBm_hNxmm0rMARgYLBEnxhRQFHaektjQl4dgDI7jshXScnrxaaEBt5VbR0M0WH-j7G_W4Cf_uyoQn1hFZe"
-                        class="aspect-square object-cover grayscale hover:grayscale-0 transition-all">
-                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI96xHk0zZUfodulorYmgquek1G7lal7AiG8ovpttfdfm4c4l7ADH-jdNJ9BhB8yvtoXE50WL6zbCIom97LSo3olStWx3LV-oBkhrGLeQWqdQQRALK-7665pYpBxZwCjwiHkKZ--WDjzOAGmchYcaDHBqdjlSUoEcnS6zX_X423wcN8UpmvDUPfNrblIsixSvnWqx64LbATLUz8a7K9h0eoOBNxpR4LsxCDhpE9J0__cCGP2uT3tULZs2tCjmlo1WbVhn2I_35qPK0"
-                        class="aspect-square object-cover grayscale hover:grayscale-0 transition-all">
-                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbMPCnyOAMLC9e_JTK6TDxGMfFhgT4KInX7uOv0O7rtXioOhNDTAYhJPTeU0C33nTyv2MCsW2116X2CqtvCpWhw4i1S-hfYiAUg43UZT9sUpfgZukgyUfKMJcycnDJL5uajB-7oUqUu0dyHrQCT81rA3EGSHLKukEQwlHyLcybOuN29RcvPQyN2yLNU_dLpU2hlf1Yw9yhxU2iGgWXvBtbv9Fbx2Y2qsEWqBxYKD0R2d5jbgteQ4lzvGgIVbMLK0KFdS69ydCrH1xO"
-                        class="aspect-square object-cover grayscale hover:grayscale-0 transition-all">
+            <div class="video-slider-container">
+                <div class="video-slider-wrapper" id="video-grid">
+                    <!-- Static Video Item 1 -->
+                    <div class="video-card group" onclick="playVideo('https://www.w3schools.com/html/mov_bbb.mp4')">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLtlnBd3LqeVoGI_e8gjfPkPb1zDAGK42v3pg6q26PVA7_X9hTGaZmGczhDK8CO_CF2-fEzYg8HZdQvBKXDpGoFZcZxIJXGbF86MmAzTd_qRwmU4AAYiArv8pnt_YkKi87OlQAAttlyM_RKk84vdu1dtAV67gOastb0IfQrz5aZfTEwl0L0KTeNg5qySMbXHURbFPSYiTjvf_g_wALNPUkGqschssXTZbsrNLrUEXH8dxZvRo3qW1OrLCBzj4iI1pFnzdk2Nek3hRY"
+                            alt="Artisan Video">
+                        <div class="play-icon">
+                            <span class="material-symbols-outlined" style="font-size: 2rem;">play_arrow</span>
+                        </div>
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <p class="text-[10px] uppercase tracking-widest font-bold text-gold mb-1">Process</p>
+                            <h4 class="font-serif italic text-xl">The Art of Joinery</h4>
+                        </div>
+                    </div>
+
+                    <!-- Static Video Item 2 -->
+                    <div class="video-card group" onclick="playVideo('https://www.w3schools.com/html/movie.mp4')">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDebDkx2K_iA-3TasuOokRlZE4q9l5PkBxPoUmhMmSAnSYgkZdAbPrXeD1TSITs2_BdG0JirHdGsnjceuJzDlwHAmnO3_cmyVT4Ne7CTB_YFaC1wKa-1EvuhfuiZHraYFPv_QuhFBLP-FjSX8OAQ75wGYoh69nRuR-sDj-enJVN70Lh4hEVOQ7d5zNuLEHCLbxDPZ8SKM7Zjkt9ZIAcDsc6SQJNDmhqFKRSg_BWytbe0xHlyjXHJj2YX9mIspyPrfyU62xYo9V2UTl0"
+                            alt="Workshop Video">
+                        <div class="play-icon">
+                            <span class="material-symbols-outlined" style="font-size: 2rem;">play_arrow</span>
+                        </div>
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <p class="text-[10px] uppercase tracking-widest font-bold text-gold mb-1">Workshop</p>
+                            <h4 class="font-serif italic text-xl">Midnight in Milan</h4>
+                        </div>
+                    </div>
+
+                    <!-- Static Video Item 3 (Additional for visual) -->
+                    <div class="video-card group" onclick="playVideo('https://www.w3schools.com/html/mov_bbb.mp4')">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFTsfwlmeBv68O_epZddDz6XMCGtyKcno7svVWoozcQ2202XXXfOB1Xyy4IUlG0AWvls4HwbQ5NwqoKgBAwAI8OE5svCP51ZGSZabaNBoWoGk6iMQ3PAC4qKD1fyE8AfovBH-3pR47nTJXqpAG8kibStB-u3D9ccp5wWxzblHiCSpY84hzZXv6Ktly_WHIuU0nzBCYUXCNUQJFzqDCD1j3JMHb6HlfO9WL1C_Iozl7P-TTINJG1cTp31NqXTACthGyYH4KTCZMnBg1"
+                            alt="Collection Promo">
+                        <div class="play-icon">
+                            <span class="material-symbols-outlined" style="font-size: 2rem;">play_arrow</span>
+                        </div>
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <p class="text-[10px] uppercase tracking-widest font-bold text-gold mb-1">Heritage</p>
+                            <h4 class="font-serif italic text-xl">Sovereign Pieces</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Controls -->
+                <div class="slider-controls">
+                    <button class="slider-control-btn" id="slider-prev">
+                        <span class="material-symbols-outlined">west</span>
+                    </button>
+                    <button class="slider-control-btn" id="slider-next">
+                        <span class="material-symbols-outlined">east</span>
+                    </button>
                 </div>
             </div>
         </div>
-    </main>
 
-    <!-- Preserved Modal Markup (Hidden) -->
-    <div class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4"
-        style="background: rgba(10,10,10,0.98); backdrop-filter: blur(20px);">
-        <!-- Content Would Go Here -->
-    </div>
+        <!-- Video Modal -->
+        <div id="video-modal" class="modal-overlay" style="display: none; z-index: 1000;">
+            <div class="modal-content"
+                style="max-width: 900px; padding: 0; background: black; aspect-ratio: 16/9; overflow: hidden;">
+                <button class="modal-close" style="top: -2rem; right: -2rem; color: white;" onclick="closeVideo()">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+                <video id="gallery-video-player" controls style="width: 100%; height: 100%;">
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </main>
 
     <footer
         style="padding: 5rem 0; border-top: 1px solid rgba(255,255,255,0.05); background-color: var(--color-midnight);">
@@ -280,7 +514,7 @@
         <div class="chat-scroll-area">
             <div class="flex flex-col gap-4">
                 <div class="message-bubble message-concierge">
-                    Welcome to the Gallery. Inquire about any piece here.
+                    Welcome to Ochestra. How may we assist you with your collection today?
                 </div>
             </div>
         </div>

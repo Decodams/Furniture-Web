@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ochestra | Digital Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ecb613", // Gold
+                        "midnight": "#12141d", // Deep Navy
+                        "walnut": "#3d2b1f", // Walnut Wood
+                        "paper": "#fcfaf5", // Soft Cream Paper
+                        "background-light": "#f8f8f6",
+                        "background-dark": "#12141d",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .walnut-grain {
+            background-color: #12141d;
+            background-image: linear-gradient(rgba(18, 20, 29, 0.8), rgba(18, 20, 29, 0.8)), 
+                              repeating-linear-gradient(45deg, rgba(61, 43, 31, 0.1) 0px, rgba(61, 43, 31, 0.1) 2px, transparent 2px, transparent 4px);
+        }
+        .paper-shadow {
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body class="bg-midnight font-display text-midnight antialiased">
+<div class="relative flex min-h-screen flex-col items-center py-10 px-4 sm:px-10">
+<!-- Top Navigation Bar -->
+<div class="fixed top-0 left-0 right-0 z-50 bg-midnight/90 backdrop-blur-md border-b border-primary/20">
+<header class="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-primary text-xl font-bold tracking-[0.1em] uppercase">Ochestra</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8 text-white/70 text-sm font-medium tracking-widest uppercase">
+<a class="hover:text-primary transition-colors" href="#">Collection</a>
+<a class="hover:text-primary transition-colors" href="#">Process</a>
+<a class="hover:text-primary transition-colors" href="#">Heritage</a>
+<a class="hover:text-primary transition-colors" href="#">Archives</a>
+</nav>
+<div class="flex gap-4">
+<button class="flex min-w-[120px] items-center justify-center rounded bg-primary px-4 py-2 text-xs font-bold uppercase tracking-widest text-midnight hover:bg-primary/90 transition-all">
+                    Download PDF
+                </button>
+<button class="flex items-center justify-center rounded bg-white/10 px-3 text-white hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined text-lg">print</span>
+</button>
+</div>
+</header>
+</div>
+<!-- Portfolio "Book" Container -->
+<div class="mt-20 flex w-full max-w-[1000px] flex-col gap-16">
+<!-- Cover Page Section -->
+<section class="walnut-grain paper-shadow relative aspect-[1/1.414] w-full overflow-hidden rounded-sm border border-walnut/30 flex flex-col items-center justify-center">
+<div class="absolute inset-0 opacity-20 pointer-events-none" data-alt="Subtle dark walnut wood grain texture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAhhDQBTVtKJEscEAnjNib9tCs1oz8oAiH_bIGD8ukhSgxbnTu2q6ci8r1Wq6dSbOBj_L5V38pKM5HmH7itp64O9L3sEBNVQqKD7UfiExIEAJmbryNS3YZLSnmrJ_77OhQtp4kKZAX5DqWRpwTs8i3FZXd_YsIf6TMQV6u9zr9hR9KTfKkySc9HT9D2k5Mj4twXDUKfcmY3oq6pHPVmvXHTXRNT-ncc0N_jPRrbZ5ls4f5CoVSqjXSl0ykO7x4saA_XNVshDmUq4acs'); background-size: cover;"></div>
+<div class="z-10 text-center flex flex-col items-center">
+<div class="size-24 text-primary mb-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+</svg>
+</div>
+<h1 class="text-primary text-5xl md:text-7xl font-light tracking-[0.3em] uppercase italic mb-4">Ochestra</h1>
+<p class="text-primary/60 text-sm tracking-[0.5em] uppercase border-t border-primary/20 pt-6 mt-2">The Digital Portfolio • Vol. IV</p>
+<div class="mt-20 text-white/40 text-[10px] tracking-[0.2em] uppercase">Est. 1984 — Artisan Furniture</div>
+</div>
+</section>
+<!-- Interior Content Page 1: Introduction -->
+<section class="bg-paper paper-shadow relative aspect-[1/1.414] w-full overflow-hidden rounded-sm flex flex-col text-midnight p-16 md:p-24">
+<div class="flex flex-col gap-12 max-w-2xl">
+<p class="text-primary text-xs font-bold tracking-[0.3em] uppercase">Preface</p>
+<h2 class="text-5xl md:text-6xl font-extralight italic leading-tight">The intersection of nature’s raw beauty and human precision.</h2>
+<div class="h-px w-24 bg-primary/40"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<p class="text-lg leading-relaxed text-midnight/70 font-light">
+                        Every piece of Ochestra furniture begins not in the workshop, but in the forest. We select each timber for its unique narrative—the knots, the grain, the history written in its rings. 
+                    </p>
+<p class="text-lg leading-relaxed text-midnight/70 font-light">
+                        Our process is a deliberate slow-dance between age-old artisan techniques and modern ergonomic demands. This portfolio presents our finest work to date.
+                    </p>
+</div>
+</div>
+<div class="mt-auto flex justify-between items-end border-t border-midnight/10 pt-10">
+<div class="text-[10px] tracking-widest text-primary font-bold uppercase italic">
+                    Certificate of Authenticity — Ochestra Artisan Guild
+                </div>
+<div class="text-xs text-midnight/30 font-medium">Page 02</div>
+</div>
+</section>
+<!-- Interior Content Page 2: Hero Spread -->
+<section class="bg-paper paper-shadow relative aspect-[1/1.414] w-full overflow-hidden rounded-sm flex flex-col">
+<div class="w-full flex-1 p-8">
+<div class="w-full h-full bg-cover bg-center rounded-sm" data-alt="Full bleed close up of a handcrafted walnut dining table with visible grain" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC0pxszaRr8-m0jgITSiIeyvuohSjqO94gR2hnFZ80YqsLxUD3F544bWRWHe_Gv2RV0Of1EODyEJHxuZ7C6kSjgaozUtDzkunSjqyE3GeuBn0hFAAtBQMazOoJ6gjNMLIJwcid34UJlT_eXeol7_vN9YpeLPBrTLnFJdVG2qP1tzk53yXiXw74ez6owKMkRrf428ir5xJYWd--bdtCzdSg0YMYFWFvulE07vW3Hs1J0MYyqQiyMbpi8hzzbsW1us32lr8dM-dZDAWS3");'></div>
+</div>
+<div class="p-16 pt-0">
+<div class="flex flex-wrap justify-between items-end gap-6">
+<div class="flex flex-col gap-2">
+<p class="text-primary text-xs font-bold tracking-[0.3em] uppercase">The Collection</p>
+<h3 class="text-4xl font-light italic">The Aurelius Table</h3>
+</div>
+<div class="text-right">
+<p class="text-xs text-midnight/50 font-medium leading-loose">Solid Black Walnut, Brass Inlay<br/>Hand-rubbed Tung Oil Finish<br/>Limited Edition 1/50</p>
+</div>
+</div>
+</div>
+<div class="mt-auto flex justify-between items-end border-t border-midnight/10 pt-10 pb-16 px-16">
+<div class="text-[10px] tracking-widest text-primary font-bold uppercase italic">
+                    Certificate of Authenticity — Ochestra Artisan Guild
+                </div>
+<div class="text-xs text-midnight/30 font-medium">Page 03</div>
+</div>
+</section>
+<!-- Interior Content Page 3: Detail View -->
+<section class="bg-paper paper-shadow relative aspect-[1/1.414] w-full overflow-hidden rounded-sm flex flex-col p-16 md:p-24">
+<div class="grid grid-cols-2 gap-4 h-2/3">
+<div class="bg-cover bg-center rounded-sm" data-alt="Detail shot of hand-cut dovetail joinery in dark wood" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuADF4Lsxma-JKhLfb71ldDlSDW9tCrDQTrZROHZ0KNN5wp3SRFDTCsXPMrKrX2azvoTICLMGlvR124sjglAiY4vQboxA8p96grikJ8jrppux-eUIlHb8nGL5n3Lr6A68hdkOUWBlZqkoR-YcM-RJjPt6oVxlsJcqzGbdj1ExTp6ng_IIirXbS24xjJ9-zqNNXEL4PXVOx_CGeRWNjOrJQ0e8K4Ctkv5qiFQn2bvjB1WcxX3Uwm_wDjDkqqPqjL5ALEJL3ZQu0YN6Qqs");'></div>
+<div class="grid grid-rows-2 gap-4">
+<div class="bg-cover bg-center rounded-sm" data-alt="Macro photo of gold leaf or brass inlay on wood surface" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDw5Mn5m26RylU29J9j5t1ToVeqOt1CrAw0jtZlU05K_UWcOSe0yIWiaB5jCOcoiSYF9Ovm0nof7jdQfTjDTQuppr3LdKwMJU8uWM8DIQquYCpDxivHB1y3jyoSQAOfsWdoXFkwX2URqJ3tvSyRE-ZiwMTHD9wHK41n-t_YD6sk-oK04BjUC4I-tsNY5mnwuIlpK1QSfWbs366y54BipkEQ8cPRqaiuu3x0oxwh8y4v7UJ8hmpqGxz-E6iv3CWNKsp8ZP6KJm-dXjK7");'></div>
+<div class="bg-cover bg-center rounded-sm" data-alt="Sample blocks of different wood types and fabrics" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCEPO5ngT_IHYLFCmdEdUJKsZ8XL6cKYRGG-P_HZPY3JDWK89BX3jQ1zKHRcDkA5zsils6go7P6ytW8P78VwX43GTYYTL46gTl4srgdx7OvYHVbM9wTvqFJOcgJxW4DhwUb3cL4zuIUxK_pUYpDj4YqCr5-rPpcZwMpQIuNTVnBMtm76U88QdyhsjWKC3Hs7tSM3hWxWY8oKiGXWDBZNWjALUz4rVG3VSi3oLI3Xxg6CyjYswFavXRdJ8LBXIEGH3zvUTfesTHDvKAQ");'></div>
+</div>
+</div>
+<div class="mt-12 flex flex-col gap-6">
+<h4 class="text-2xl font-light tracking-wide italic">An Obsession with Detail</h4>
+<p class="text-base text-midnight/60 font-light leading-relaxed max-w-xl">
+                    Every joint is cut by hand. Every surface is sanded until it feels like silk. We do not believe in short-cuts; we believe in the longevity of the object and the soul of the maker.
+                </p>
+</div>
+<div class="mt-auto flex justify-between items-end border-t border-midnight/10 pt-10">
+<div class="text-[10px] tracking-widest text-primary font-bold uppercase italic">
+                    Certificate of Authenticity — Ochestra Artisan Guild
+                </div>
+<div class="text-xs text-midnight/30 font-medium">Page 04</div>
+</div>
+</section>
+<!-- Signature Page / Footer -->
+<section class="walnut-grain paper-shadow relative aspect-[1/1.414] w-full overflow-hidden rounded-sm flex flex-col items-center justify-center text-center p-16">
+<div class="max-w-md flex flex-col items-center">
+<div class="size-16 text-primary/50 mb-10">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+</svg>
+</div>
+<h5 class="text-primary text-3xl font-light italic mb-6">The Artisan’s Pledge</h5>
+<p class="text-white/60 text-sm italic font-light leading-relaxed mb-10">
+                    "I hereby certify that every piece documented in this portfolio has been crafted to the highest standards of the Ochestra Guild, using ethically sourced materials and traditional joinery techniques."
+                </p>
+<div class="w-full h-px bg-primary/20 mb-4"></div>
+<div class="flex flex-col items-center gap-2">
+<span class="text-primary font-serif text-3xl italic">Julian Ochestra</span>
+<span class="text-white/30 text-[10px] tracking-[0.3em] uppercase">Master Carpenter &amp; Founder</span>
+</div>
+</div>
+<div class="absolute bottom-16 text-white/20 text-[9px] tracking-[0.5em] uppercase">
+                Ochestra Limited Portfolio © 2024
+            </div>
+</section>
+</div>
+<!-- Floating Action Buttons -->
+<div class="fixed bottom-10 right-10 flex flex-col gap-4 z-50">
+<button class="flex size-14 items-center justify-center rounded-full bg-primary text-midnight shadow-2xl hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">download</span>
+</button>
+<button class="flex size-14 items-center justify-center rounded-full bg-white text-midnight shadow-2xl hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+<!-- Page Number Navigation -->
+<div class="fixed bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-6 z-50 bg-midnight/80 backdrop-blur-md px-6 py-3 rounded-full border border-white/10">
+<button class="text-white/50 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="text-white/80 text-xs font-bold tracking-[0.3em] uppercase">
+            Page <span class="text-primary">01</span> / 05
+        </div>
+<button class="text-white/50 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</body></html>

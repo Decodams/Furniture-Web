@@ -1,4 +1,38 @@
+// Video Modal Logic for Collections Page
+window.playVideo = function (videoUrl) {
+    const modal = document.getElementById('video-modal');
+    const player = document.getElementById('gallery-video-player');
+    if (modal && player) {
+        player.src = videoUrl;
+        modal.style.display = 'flex';
+        player.play();
+    }
+}
+
+window.closeVideo = function () {
+    const modal = document.getElementById('video-modal');
+    const player = document.getElementById('gallery-video-player');
+    if (modal && player) {
+        modal.style.display = 'none';
+        player.pause();
+        player.src = '';
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    // Active Nav Indicator
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+        const linkPath = link.getAttribute('href').split('/').pop();
+        if (linkPath === currentPath) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+
     // Mobile Menu Logic
     const mobileToggle = document.querySelector('.mobile-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -25,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (chatBtn && chatWindow) {
         chatBtn.addEventListener('click', () => {
             chatWindow.classList.toggle('active');
-            // Optional: Toggle icon
             const icon = chatBtn.querySelector('.material-symbols-outlined');
             if (chatWindow.classList.contains('active')) {
                 icon.textContent = 'expand_more';
@@ -38,8 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (chatClose) {
         chatClose.addEventListener('click', () => {
             chatWindow.classList.remove('active');
-            const icon = chatBtn.querySelector('.material-symbols-outlined');
-            icon.textContent = 'chat_bubble';
+            if (chatBtn) {
+                const icon = chatBtn.querySelector('.material-symbols-outlined');
+                if (icon) icon.textContent = 'chat_bubble';
+            }
         });
     }
 
@@ -53,8 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
         quickViewButtons.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
-                // In a real app, you'd fetch data here. 
-                // For now, we simulate by just showing the modal.
                 productModal.classList.add('active');
             });
         });
@@ -65,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Close on background click
         if (modalOverlay) {
             modalOverlay.addEventListener('click', (e) => {
                 if (e.target === modalOverlay) {
@@ -73,5 +105,134 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
+    }
+
+    // Gallery Logic (Filters, Search)
+    const galleryGrid = document.getElementById('gallery-grid');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const clearFiltersBtn = document.getElementById('clear-filters');
+    const gallerySearch = document.getElementById('gallery-search');
+
+    if (galleryGrid) {
+        // Filter Functionality
+        function filterGallery(category) {
+            const items = galleryGrid.querySelectorAll('.masonry-item');
+            items.forEach(item => {
+                const itemCat = item.getAttribute('data-category');
+                if (category === 'all' || itemCat === category) {
+                    item.style.display = 'block';
+                    item.classList.remove('hidden');
+                } else {
+                    item.style.display = 'none';
+                    item.classList.add('hidden');
+                }
+            });
+        }
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                filterGallery(btn.getAttribute('data-filter'));
+            });
+        });
+
+        // Clear Selections
+        if (clearFiltersBtn) {
+            clearFiltersBtn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
+                if (allBtn) allBtn.classList.add('active');
+                filterGallery('all');
+                if (gallerySearch) gallerySearch.value = '';
+                const items = galleryGrid.querySelectorAll('.masonry-item');
+                items.forEach(item => {
+                    item.style.display = 'block';
+                    item.classList.remove('hidden');
+                });
+            });
+        }
+
+        // Search Functionality
+        const globalSearch = document.querySelector('.search-input');
+        const searchInput = gallerySearch || globalSearch;
+
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase();
+                const items = galleryGrid.querySelectorAll('.masonry-item');
+                items.forEach(item => {
+                    const titleElement = item.querySelector('h3');
+                    const title = titleElement ? titleElement.textContent.toLowerCase() : '';
+                    const cat = item.getAttribute('data-category') ? item.getAttribute('data-category').toLowerCase() : '';
+                    if (title.includes(query) || cat.includes(query)) {
+                        item.style.display = 'block';
+                        item.classList.remove('hidden');
+                    } else {
+                        item.style.display = 'none';
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        }
+    }
+
+    // Video Slider Logic
+    const sliderWrapper = document.getElementById('video-grid');
+    const prevBtn = document.getElementById('slider-prev');
+    const nextBtn = document.getElementById('slider-next');
+
+    if (sliderWrapper && prevBtn && nextBtn) {
+        const cardWidth = () => {
+            const card = sliderWrapper.querySelector('.video-card');
+            return card ? card.offsetWidth + parseFloat(getComputedStyle(sliderWrapper).gap) : 0;
+        };
+
+        const updateControls = () => {
+            const maxScroll = sliderWrapper.scrollWidth - sliderWrapper.clientWidth;
+            prevBtn.disabled = sliderWrapper.scrollLeft <= 0;
+            nextBtn.disabled = sliderWrapper.scrollLeft >= maxScroll - 5;
+        };
+
+        nextBtn.addEventListener('click', () => {
+            sliderWrapper.scrollBy({ left: cardWidth(), behavior: 'smooth' });
+            setTimeout(updateControls, 500);
+        });
+
+        prevBtn.addEventListener('click', () => {
+            sliderWrapper.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
+            setTimeout(updateControls, 500);
+        });
+
+        sliderWrapper.addEventListener('scroll', updateControls);
+        window.addEventListener('resize', updateControls);
+        setTimeout(updateControls, 500);
+    }
+
+    // Service Page Tab Logic
+    const serviceBtns = document.querySelectorAll('.service-nav-btn');
+    const serviceSections = document.querySelectorAll('.service-section');
+
+    if (serviceBtns.length > 0 && serviceSections.length > 0) {
+        serviceBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = btn.getAttribute('data-service');
+
+                // Update buttons
+                serviceBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Show target section, hide others
+                serviceSections.forEach(section => {
+                    if (section.id === `service-${target}`) {
+                        section.classList.remove('hidden');
+                        section.style.display = 'block';
+                    } else {
+                        section.classList.add('hidden');
+                        section.style.display = 'none';
+                    }
+                });
+            });
+        });
     }
 });
