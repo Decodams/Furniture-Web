@@ -20,16 +20,45 @@ window.closeVideo = function () {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Shared Asset Arrays
+    const serviceImages = [
+        'Image/Bedroom.jpg',
+        'Image/Bedroom2.jpg',
+        'Image/Children.jpg',
+        'Image/Class.jpg',
+        'Image/Console.jpg',
+        'Image/Dinning.jpg',
+        'Image/Frame.jpg',
+        'Image/Mattress.jpg',
+        'Image/Office.jpg',
+        'Image/Outdoor.jpg',
+        'Image/Pillow.jpg',
+        'Image/Setup.jpg',
+        'Image/Shelf.jpg',
+        'Image/Tv.jpg'
+    ];
+
+    const serviceDescriptionTexts = [
+        "Experience the pinnacle of artisanal mastery with our dedicated team of craftsmen, bringing centuries of tradition to modern living.",
+        "Our approach combines sustainable materials with visionary design, ensuring every piece reflects your unique lifestyle and legacy.",
+        "Where meticulous attention to detail meets the soul of raw timber. We don't just create furniture; we craft stories in wood.",
+        "Transforming spatial concepts into architectural realities. Our commitment to excellence is reflected in every joint and finish.",
+        "A legacy of luxury, hand-finished with 24k gold leaf and curated for the most discerning collectors of fine furniture."
+    ];
+
     // Active Nav Indicator
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-link');
 
     navLinks.forEach(link => {
-        const linkPath = link.getAttribute('href').split('/').pop();
-        if (linkPath === currentPath) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
+        const href = link.getAttribute('href');
+        if (href) {
+            const linkPath = href.split('/').pop();
+            if (linkPath === currentPath) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
         }
     });
 
@@ -221,6 +250,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 serviceSections.forEach(section => {
                     if (section.id === `service-${target}`) {
                         section.classList.remove('hidden');
+
+                        // Pick random image and text
+                        const randomImg = serviceImages[Math.floor(Math.random() * serviceImages.length)];
+                        const randomText = serviceDescriptionTexts[Math.floor(Math.random() * serviceDescriptionTexts.length)];
+
+                        const img = section.querySelector('img');
+                        if (img) {
+                            img.src = randomImg;
+                            img.style.filter = 'none'; // Remove grayscale for more impact
+                        }
+
+                        const p = section.querySelector('p');
+                        if (p) {
+                            p.textContent = randomText;
+                        }
                     } else {
                         section.classList.add('hidden');
                     }

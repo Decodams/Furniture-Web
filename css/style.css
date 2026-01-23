@@ -212,6 +212,10 @@ h6 {
 }
 
 /* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
 .text-xs {
     font-size: 0.75rem;
 }
@@ -648,7 +652,7 @@ footer li a:hover {
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
-        z-index: -1;
+        z-index: 1000;
     }
 
     .nav-menu.active {
@@ -659,6 +663,7 @@ footer li a:hover {
 
     .mobile-toggle {
         display: block;
+        z-index: 1001;
     }
 
     .grid-cols-2,
