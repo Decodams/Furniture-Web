@@ -1225,9 +1225,76 @@ details[open] summary {
     overflow: hidden;
 }
 
+@media (max-width: 480px) {
+    .chat-modal-window {
+        left: 1rem;
+        right: 1rem;
+        width: calc(100% - 2rem);
+        bottom: 5rem;
+        height: 400px;
+    }
+}
+
 .chat-modal-window.active {
     transform: scale(1);
     opacity: 1;
+}
+
+/* Pagination Styles */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 4rem;
+}
+
+.pagination-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--color-slate-400);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.pagination-numbers {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.page-num {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--color-slate-400);
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+}
+
+.page-num.active {
+    background: var(--color-gold);
+    color: var(--color-midnight);
+    border-color: var(--color-gold);
+}
+
+.page-num:hover:not(.active) {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
 }
 
 .chat-header-small {
@@ -1346,12 +1413,46 @@ details[open] summary {
     }
 }
 
+/* Responsive scroll for tabs */
+.tab-container-responsive {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.tab-container-responsive::-webkit-scrollbar {
+    display: none;
+}
+
 @media (max-width: 768px) {
-    .container {
-        padding: 0 1rem;
+    .tab-container-responsive {
+        justify-content: flex-start;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 
-    body {
-        font-size: 14px;
+    .service-nav-btn {
+        flex-shrink: 0;
+    }
+
+    .filter-btn {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+}
+
+.masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+@media (max-width: 640px) {
+    .masonry-grid {
+        grid-template-columns: 1fr;
     }
 }

@@ -120,10 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
             items.forEach(item => {
                 const itemCat = item.getAttribute('data-category');
                 if (category === 'all' || itemCat === category) {
-                    item.style.display = 'block';
                     item.classList.remove('hidden');
                 } else {
-                    item.style.display = 'none';
                     item.classList.add('hidden');
                 }
             });
@@ -147,7 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (gallerySearch) gallerySearch.value = '';
                 const items = galleryGrid.querySelectorAll('.masonry-item');
                 items.forEach(item => {
-                    item.style.display = 'block';
                     item.classList.remove('hidden');
                 });
             });
@@ -166,10 +163,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     const title = titleElement ? titleElement.textContent.toLowerCase() : '';
                     const cat = item.getAttribute('data-category') ? item.getAttribute('data-category').toLowerCase() : '';
                     if (title.includes(query) || cat.includes(query)) {
-                        item.style.display = 'block';
                         item.classList.remove('hidden');
                     } else {
-                        item.style.display = 'none';
                         item.classList.add('hidden');
                     }
                 });
@@ -226,13 +221,92 @@ document.addEventListener('DOMContentLoaded', () => {
                 serviceSections.forEach(section => {
                     if (section.id === `service-${target}`) {
                         section.classList.remove('hidden');
-                        section.style.display = 'block';
                     } else {
                         section.classList.add('hidden');
-                        section.style.display = 'none';
                     }
                 });
             });
         });
     }
+
+    // Product Pagination Logic
+    const productGrid = document.getElementById('product-grid');
+    const paginationContainer = document.getElementById('product-pagination');
+    const itemsPerPage = 9;
+    let currentPage = 1;
+
+    if (productGrid && paginationContainer) {
+        const products = Array.from(productGrid.children);
+        const totalPages = Math.ceil(products.length / itemsPerPage);
+
+        function showPage(page) {
+            currentPage = page;
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+
+            products.forEach((product, index) => {
+                if (index >= start && index < end) {
+                    product.classList.remove('hidden');
+                } else {
+                    product.classList.add('hidden');
+                }
+            });
+
+            updatePaginationUI();
+        }
+
+        function updatePaginationUI() {
+            const numbersContainer = document.getElementById('page-numbers');
+            const prevBtn = document.getElementById('prev-page');
+            const nextBtn = document.getElementById('next-page');
+
+            if (numbersContainer) {
+                numbersContainer.innerHTML = '';
+                for (let i = 1; i <= totalPages; i++) {
+                    const btn = document.createElement('button');
+                    btn.className = `page-num ${i === currentPage ? 'active' : ''}`;
+                    btn.textContent = i;
+                    btn.addEventListener('click', () => showPage(i));
+                    numbersContainer.appendChild(btn);
+                }
+            }
+
+            if (prevBtn) prevBtn.disabled = currentPage === 1;
+            if (nextBtn) nextBtn.disabled = currentPage === totalPages;
+        }
+
+        const prevBtn = document.getElementById('prev-page');
+        const nextBtn = document.getElementById('next-page');
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                if (currentPage > 1) showPage(currentPage - 1);
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                if (currentPage < totalPages) showPage(currentPage + 1);
+            });
+        }
+
+        // Initialize first page
+        if (products.length > 0) {
+            showPage(1);
+        } else {
+            paginationContainer.style.display = 'none';
+        }
+    }
+
+    // Modal Trigger for all pages
+    const quickViewTriggers = document.querySelectorAll('.quick-view-btn, .product-card img');
+    quickViewTriggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            const modal = document.getElementById('product-modal');
+            if (modal) {
+                modal.classList.add('active');
+                // You could dynamically update modal content here if data attributes were present
+            }
+        });
+    });
 });

@@ -121,13 +121,18 @@
                     <div id="gallery-tab-content" class="tab-content">
                         <div class="mb-10 p-6 bg-surface-dark rounded-xl border border-border-dark">
                             <h3 class="text-white font-bold mb-4">Add Piece to Collection</h3>
-                            <form id="gallery-form" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <form id="gallery-form" class="grid grid-cols-1 md:grid-cols-5 gap-4">
                                 <input type="text" id="gallery-title" placeholder="Piece Title"
                                     class="bg-background-dark border-border-dark rounded-lg text-sm text-white p-2"
                                     required>
-                                <input type="url" id="gallery-image" placeholder="Image URL"
-                                    class="bg-background-dark border-border-dark rounded-lg text-sm text-white p-2"
-                                    required>
+                                <div
+                                    class="relative flex items-center bg-background-dark border border-border-dark rounded-lg px-2">
+                                    <span class="text-xs text-white/40 mr-2">Img:</span>
+                                    <input type="file" id="gallery-image-file" accept="image/*"
+                                        class="w-full text-xs text-white file:hidden bg-transparent py-2 cursor-pointer">
+                                </div>
+                                <input type="url" id="gallery-image" placeholder="Or Image URL"
+                                    class="bg-background-dark border-border-dark rounded-lg text-sm text-white p-2">
                                 <select id="gallery-category"
                                     class="bg-background-dark border-border-dark rounded-lg text-sm text-white p-2">
                                     <option value="Modern">Modern</option>
@@ -214,15 +219,31 @@
                 galleryForm.addEventListener('submit', (e) => {
                     e.preventDefault();
                     const items = JSON.parse(localStorage.getItem('ochestra_collection') || '[]');
+                    const fileInput = document.getElementById('gallery-image-file');
+                    const urlInput = document.getElementById('gallery-image');
+
+                    let imageUrl = urlInput.value;
+
+                    if (fileInput.files && fileInput.files[0]) {
+                        // Create a temporary object URL for preview (won't persist across restarts in a real browser session)
+                        // In a real project, we would upload to a CDN.
+                        imageUrl = URL.createObjectURL(fileInput.files[0]);
+                    }
+
+                    if (!imageUrl) {
+                        alert('Please provide an image file or URL');
+                        return;
+                    }
+
                     items.push({
                         title: document.getElementById('gallery-title').value,
-                        image: document.getElementById('gallery-image').value,
+                        image: imageUrl,
                         category: document.getElementById('gallery-category').value
                     });
                     localStorage.setItem('ochestra_collection', JSON.stringify(items));
                     galleryForm.reset();
                     loadAdminGallery();
-                    alert('Gallery piece saved locally!');
+                    alert('Gallery piece saved!');
                 });
             }
 

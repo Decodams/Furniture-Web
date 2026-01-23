@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Ochestra Admin: Overview</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ochestra Admin: Overview</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -33,334 +40,400 @@
             },
         }
     </script>
-<style>
-        body { font-family: 'Inter', sans-serif; }
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
         .active-nav {
             background-color: #393528;
             border-left: 4px solid #ecb613;
         }
     </style>
 </head>
+
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen">
-<div class="flex min-h-screen">
-<!-- Sidebar -->
-<aside class="w-64 border-r border-border-dark flex flex-col justify-between p-4 bg-background-dark sticky top-0 h-screen">
-<div class="flex flex-col gap-8">
-<div class="flex items-center gap-3 px-2">
-<div class="bg-primary rounded-lg p-1.5">
-<span class="material-symbols-outlined text-background-dark font-bold">chair</span>
-</div>
-<div class="flex flex-col">
-<h1 class="text-white text-base font-bold leading-none">Ochestra</h1>
-<p class="text-[#b9b29d] text-[10px] uppercase tracking-widest font-semibold mt-1">Admin Dashboard</p>
-</div>
-</div>
-<nav class="flex flex-col gap-1">
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg active-nav text-white" href="#">
-<span class="material-symbols-outlined text-primary">dashboard</span>
-<p class="text-sm font-medium">Overview</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#b9b29d] hover:bg-white/5 transition-colors" href="#">
-<span class="material-symbols-outlined">shopping_bag</span>
-<p class="text-sm font-medium">Orders</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#b9b29d] hover:bg-white/5 transition-colors" href="#">
-<span class="material-symbols-outlined">inventory_2</span>
-<p class="text-sm font-medium">Inventory</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#b9b29d] hover:bg-white/5 transition-colors" href="#">
-<span class="material-symbols-outlined">architecture</span>
-<p class="text-sm font-medium">Projects</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#b9b29d] hover:bg-white/5 transition-colors" href="#">
-<span class="material-symbols-outlined">collections</span>
-<p class="text-sm font-medium">Gallery</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#b9b29d] hover:bg-white/5 transition-colors" href="#">
-<span class="material-symbols-outlined">menu_book</span>
-<p class="text-sm font-medium">Journal</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#b9b29d] hover:bg-white/5 transition-colors" href="#">
-<span class="material-symbols-outlined">monitoring</span>
-<p class="text-sm font-medium">Analytics</p>
-</a>
-</nav>
-</div>
-<div class="flex flex-col gap-4">
-<button class="flex w-full items-center justify-center rounded-lg h-11 px-4 bg-primary text-background-dark text-sm font-bold transition-transform hover:scale-[1.02]">
-<span class="material-symbols-outlined mr-2 text-sm">open_in_new</span>
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <aside
+            class="w-64 border-r border-border-dark flex flex-col justify-between p-4 bg-background-dark sticky top-0 h-screen">
+            <div class="flex flex-col gap-8">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="bg-primary rounded-lg p-1.5">
+                        <span class="material-symbols-outlined text-background-dark font-bold">chair</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-base font-bold leading-none">Ochestra</h1>
+                        <p class="text-[#b9b29d] text-[10px] uppercase tracking-widest font-semibold mt-1">Admin
+                            Dashboard</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-1">
+                    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg active-nav text-white"
+                        href="admindashboard.html">
+                        <span class="material-symbols-outlined text-primary">dashboard</span>
+                        <p class="text-sm font-medium">Overview</p>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#b9b29d] hover:bg-white/5 transition-colors"
+                        href="#">
+                        <span class="material-symbols-outlined">shopping_bag</span>
+                        <p class="text-sm font-medium">Orders</p>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#b9b29d] hover:bg-white/5 transition-colors"
+                        href="#">
+                        <span class="material-symbols-outlined">inventory_2</span>
+                        <p class="text-sm font-medium">Inventory</p>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#b9b29d] hover:bg-white/5 transition-colors"
+                        href="#">
+                        <span class="material-symbols-outlined">architecture</span>
+                        <p class="text-sm font-medium">Projects</p>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#b9b29d] hover:bg-white/5 transition-colors"
+                        href="admincontent.html">
+                        <span class="material-symbols-outlined">collections</span>
+                        <p class="text-sm font-medium">Gallery</p>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#b9b29d] hover:bg-white/5 transition-colors"
+                        href="#">
+                        <span class="material-symbols-outlined">menu_book</span>
+                        <p class="text-sm font-medium">Journal</p>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#b9b29d] hover:bg-white/5 transition-colors"
+                        href="#">
+                        <span class="material-symbols-outlined">monitoring</span>
+                        <p class="text-sm font-medium">Analytics</p>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex flex-col gap-4">
+                <a href="../../index.html"
+                    class="flex w-full items-center justify-center rounded-lg h-11 px-4 bg-primary text-background-dark text-sm font-bold transition-transform hover:scale-[1.02]">
+                    <span class="material-symbols-outlined mr-2 text-sm">open_in_new</span>
                     View Website
-                </button>
-<div class="flex items-center gap-3 p-2 border-t border-border-dark pt-4">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-primary/30" data-alt="Admin user profile picture portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA1owEfq6l0juQBOvhqnNbof-5gUOvd0SnL3v9H7DoAVjKni6PlxPQtZtLUt0Mm0ky4SMYFFUqEuN38lN_Tr1Vd0figH43_XDu0N0aa3HuH6H5tH7vZ96zAYVAC9BJy6v4sVHdDI2F7WiKziGZXDvh-NuhHo13fHqlZ_WQ8IUXwuNIdNh7-48GqYTsGoZjYRkyqy8pbdLgLuOccrvLQTFiwT_1aL5vF5UKQQXd1mMWEhk4yszNTl8jghtpwpXoerIlnxThxSPtcAIJb");'></div>
-<div class="flex flex-col">
-<p class="text-white text-xs font-bold">Marcus Thorne</p>
-<p class="text-[#b9b29d] text-[10px]">Head of Design</p>
-</div>
-</div>
-</div>
-</aside>
-<!-- Main Content -->
-<main class="flex-1 flex flex-col bg-background-light dark:bg-background-dark">
-<!-- Header -->
-<header class="flex items-center justify-between px-8 py-4 border-b border-border-dark bg-background-dark/50 backdrop-blur-md sticky top-0 z-10">
-<div class="flex items-center gap-8">
-<div class="flex flex-col">
-<div class="flex items-center gap-2 mb-1">
-<a class="text-[#b9b29d] text-xs font-medium hover:text-primary transition-colors" href="#">Home</a>
-<span class="text-[#b9b29d] text-xs">/</span>
-<span class="text-primary text-xs font-medium">Overview</span>
-</div>
-<h2 class="text-white text-xl font-bold tracking-tight">Dashboard Overview</h2>
-</div>
-<div class="relative w-64">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#b9b29d] text-sm">search</span>
-<input class="w-full bg-surface-dark border-none rounded-lg py-2 pl-10 pr-4 text-sm text-white placeholder:text-[#b9b29d] focus:ring-1 focus:ring-primary" placeholder="Search anything..." type="text"/>
-</div>
-</div>
-<div class="flex items-center gap-4">
-<div class="flex gap-2">
-<button class="p-2 rounded-lg bg-surface-dark text-[#b9b29d] hover:text-white transition-colors relative">
-<span class="material-symbols-outlined">notifications</span>
-<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full"></span>
-</button>
-<button class="p-2 rounded-lg bg-surface-dark text-[#b9b29d] hover:text-white transition-colors">
-<span class="material-symbols-outlined">settings</span>
-</button>
-</div>
-</div>
-</header>
-<div class="p-8 flex flex-col gap-8 max-w-7xl mx-auto w-full">
-<!-- Quick Actions -->
-<section>
-<div class="flex items-center justify-between mb-4 px-1">
-<h3 class="text-white text-sm font-semibold uppercase tracking-wider">Quick Actions</h3>
-</div>
-<div class="flex flex-wrap gap-4">
-<button class="flex-1 min-w-[200px] flex items-center justify-between p-4 rounded-xl bg-primary/10 border border-primary/20 hover:bg-primary/20 transition-all group">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary">add_circle</span>
-<span class="text-white font-semibold">Add New Product</span>
-</div>
-<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
-</button>
-<button class="flex-1 min-w-[200px] flex items-center justify-between p-4 rounded-xl bg-surface-dark border border-border-dark hover:border-primary/50 transition-all group">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary">post_add</span>
-<span class="text-white font-semibold">Post to Journal</span>
-</div>
-<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
-</button>
-<button class="flex-1 min-w-[200px] flex items-center justify-between p-4 rounded-xl bg-surface-dark border border-border-dark hover:border-primary/50 transition-all group">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary">upload_file</span>
-<span class="text-white font-semibold">Update Portfolio</span>
-</div>
-<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
-</button>
-</div>
-</section>
-<!-- Key Metrics -->
-<section>
-<h1 class="text-white tracking-tight text-2xl font-bold mb-6">Key Metrics</h1>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-<div class="flex flex-col gap-3 rounded-xl p-6 bg-surface-dark border border-border-dark hover:border-primary/30 transition-colors">
-<div class="flex justify-between items-start">
-<p class="text-[#b9b29d] text-sm font-medium">Monthly Revenue</p>
-<span class="material-symbols-outlined text-primary text-xl">payments</span>
-</div>
-<div class="flex items-baseline gap-2">
-<p class="text-white text-3xl font-bold">$42,500</p>
-<p class="text-[#0bda1d] text-xs font-bold bg-[#0bda1d]/10 px-1.5 py-0.5 rounded">+12%</p>
-</div>
-<!-- Mini Chart Placeholder -->
-<div class="h-12 w-full mt-2 flex items-end gap-1">
-<div class="w-full bg-primary/20 h-4 rounded-t-sm"></div>
-<div class="w-full bg-primary/40 h-6 rounded-t-sm"></div>
-<div class="w-full bg-primary/20 h-3 rounded-t-sm"></div>
-<div class="w-full bg-primary/60 h-8 rounded-t-sm"></div>
-<div class="w-full bg-primary h-12 rounded-t-sm"></div>
-</div>
-</div>
-<div class="flex flex-col gap-3 rounded-xl p-6 bg-surface-dark border border-border-dark hover:border-primary/30 transition-colors">
-<div class="flex justify-between items-start">
-<p class="text-[#b9b29d] text-sm font-medium">Project Volume</p>
-<span class="material-symbols-outlined text-primary text-xl">architecture</span>
-</div>
-<div class="flex items-baseline gap-2">
-<p class="text-white text-3xl font-bold">14</p>
-<p class="text-[#0bda1d] text-xs font-bold bg-[#0bda1d]/10 px-1.5 py-0.5 rounded">+5%</p>
-</div>
-<div class="h-12 w-full mt-2 flex items-end gap-1">
-<div class="w-full bg-primary/30 h-8 rounded-t-sm"></div>
-<div class="w-full bg-primary/30 h-7 rounded-t-sm"></div>
-<div class="w-full bg-primary/30 h-9 rounded-t-sm"></div>
-<div class="w-full bg-primary h-10 rounded-t-sm"></div>
-<div class="w-full bg-primary/50 h-6 rounded-t-sm"></div>
-</div>
-</div>
-<div class="flex flex-col gap-3 rounded-xl p-6 bg-surface-dark border border-border-dark hover:border-primary/30 transition-colors">
-<div class="flex justify-between items-start">
-<p class="text-[#b9b29d] text-sm font-medium">Active Leads</p>
-<span class="material-symbols-outlined text-primary text-xl">person_search</span>
-</div>
-<div class="flex items-baseline gap-2">
-<p class="text-white text-3xl font-bold">32</p>
-<p class="text-[#0bda1d] text-xs font-bold bg-[#0bda1d]/10 px-1.5 py-0.5 rounded">+8%</p>
-</div>
-<div class="h-12 w-full mt-2 flex items-end gap-1">
-<div class="w-full bg-primary/20 h-5 rounded-t-sm"></div>
-<div class="w-full bg-primary h-12 rounded-t-sm"></div>
-<div class="w-full bg-primary/40 h-9 rounded-t-sm"></div>
-<div class="w-full bg-primary/30 h-7 rounded-t-sm"></div>
-<div class="w-full bg-primary/60 h-10 rounded-t-sm"></div>
-</div>
-</div>
-<div class="flex flex-col gap-3 rounded-xl p-6 bg-surface-dark border border-border-dark hover:border-primary/30 transition-colors">
-<div class="flex justify-between items-start">
-<p class="text-[#b9b29d] text-sm font-medium">Conv. Rate</p>
-<span class="material-symbols-outlined text-primary text-xl">ads_click</span>
-</div>
-<div class="flex items-baseline gap-2">
-<p class="text-white text-3xl font-bold">4.8%</p>
-<p class="text-[#fa4238] text-xs font-bold bg-[#fa4238]/10 px-1.5 py-0.5 rounded">-2%</p>
-</div>
-<div class="h-12 w-full mt-2 flex items-end gap-1">
-<div class="w-full bg-primary/60 h-10 rounded-t-sm"></div>
-<div class="w-full bg-primary/40 h-8 rounded-t-sm"></div>
-<div class="w-full bg-primary h-11 rounded-t-sm"></div>
-<div class="w-full bg-primary/30 h-6 rounded-t-sm"></div>
-<div class="w-full bg-primary/20 h-4 rounded-t-sm"></div>
-</div>
-</div>
-</div>
-</section>
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-<!-- Recent Activity Feed -->
-<section class="lg:col-span-1">
-<div class="bg-surface-dark border border-border-dark rounded-xl h-full flex flex-col">
-<div class="p-6 border-b border-border-dark flex items-center justify-between">
-<h3 class="text-white font-bold">Recent Activity</h3>
-<button class="text-primary text-xs font-bold hover:underline">View All</button>
-</div>
-<div class="flex-1 overflow-y-auto p-4 space-y-6">
-<div class="flex gap-4">
-<div class="relative">
-<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-sm">mail</span>
-</div>
-<div class="absolute -bottom-1 -right-1 size-4 bg-green-500 rounded-full border-2 border-surface-dark"></div>
-</div>
-<div class="flex flex-col">
-<p class="text-white text-sm font-semibold">New Inquiry: Oak Dining Set</p>
-<p class="text-[#b9b29d] text-xs">Elena Richards • 2 mins ago</p>
-<div class="mt-2 text-[#b9b29d] text-xs bg-background-dark/50 p-2 rounded italic">
+                </a>
+                <div class="flex items-center gap-3 p-2 border-t border-border-dark pt-4">
+                    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-primary/30"
+                        data-alt="Admin user profile picture portrait"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA1owEfq6l0juQBOvhqnNbof-5gUOvd0SnL3v9H7DoAVjKni6PlxPQtZtLUt0Mm0ky4SMYFFUqEuN38lN_Tr1Vd0figH43_XDu0N0aa3HuH6H5tH7vZ96zAYVAC9BJy6v4sVHdDI2F7WiKziGZXDvh-NuhHo13fHqlZ_WQ8IUXwuNIdNh7-48GqYTsGoZjYRkyqy8pbdLgLuOccrvLQTFiwT_1aL5vF5UKQQXd1mMWEhk4yszNTl8jghtpwpXoerIlnxThxSPtcAIJb");'>
+                    </div>
+                    <div class="flex flex-col">
+                        <p class="text-white text-xs font-bold">Marcus Thorne</p>
+                        <p class="text-[#b9b29d] text-[10px]">Head of Design</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col bg-background-light dark:bg-background-dark">
+            <!-- Header -->
+            <header
+                class="flex items-center justify-between px-8 py-4 border-b border-border-dark bg-background-dark/50 backdrop-blur-md sticky top-0 z-10">
+                <div class="flex items-center gap-8">
+                    <div class="flex flex-col">
+                        <div class="flex items-center gap-2 mb-1">
+                            <a class="text-[#b9b29d] text-xs font-medium hover:text-primary transition-colors"
+                                href="#">Home</a>
+                            <span class="text-[#b9b29d] text-xs">/</span>
+                            <span class="text-primary text-xs font-medium">Overview</span>
+                        </div>
+                        <h2 class="text-white text-xl font-bold tracking-tight">Dashboard Overview</h2>
+                    </div>
+                    <div class="relative w-64">
+                        <span
+                            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#b9b29d] text-sm">search</span>
+                        <input
+                            class="w-full bg-surface-dark border-none rounded-lg py-2 pl-10 pr-4 text-sm text-white placeholder:text-[#b9b29d] focus:ring-1 focus:ring-primary"
+                            placeholder="Search anything..." type="text" />
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="flex gap-2">
+                        <button
+                            class="p-2 rounded-lg bg-surface-dark text-[#b9b29d] hover:text-white transition-colors relative">
+                            <span class="material-symbols-outlined">notifications</span>
+                            <span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full"></span>
+                        </button>
+                        <button
+                            class="p-2 rounded-lg bg-surface-dark text-[#b9b29d] hover:text-white transition-colors">
+                            <span class="material-symbols-outlined">settings</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+            <div class="p-8 flex flex-col gap-8 max-w-7xl mx-auto w-full">
+                <!-- Quick Actions -->
+                <section>
+                    <div class="flex items-center justify-between mb-4 px-1">
+                        <h3 class="text-white text-sm font-semibold uppercase tracking-wider">Quick Actions</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-4">
+                        <button
+                            class="flex-1 min-w-[200px] flex items-center justify-between p-4 rounded-xl bg-primary/10 border border-primary/20 hover:bg-primary/20 transition-all group">
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary">add_circle</span>
+                                <span class="text-white font-semibold">Add New Product</span>
+                            </div>
+                            <span
+                                class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+                        </button>
+                        <button
+                            class="flex-1 min-w-[200px] flex items-center justify-between p-4 rounded-xl bg-surface-dark border border-border-dark hover:border-primary/50 transition-all group">
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary">post_add</span>
+                                <span class="text-white font-semibold">Post to Journal</span>
+                            </div>
+                            <span
+                                class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+                        </button>
+                        <button
+                            class="flex-1 min-w-[200px] flex items-center justify-between p-4 rounded-xl bg-surface-dark border border-border-dark hover:border-primary/50 transition-all group">
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary">upload_file</span>
+                                <span class="text-white font-semibold">Update Portfolio</span>
+                            </div>
+                            <span
+                                class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-opacity">chevron_right</span>
+                        </button>
+                    </div>
+                </section>
+                <!-- Key Metrics -->
+                <section>
+                    <h1 class="text-white tracking-tight text-2xl font-bold mb-6">Key Metrics</h1>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div
+                            class="flex flex-col gap-3 rounded-xl p-6 bg-surface-dark border border-border-dark hover:border-primary/30 transition-colors">
+                            <div class="flex justify-between items-start">
+                                <p class="text-[#b9b29d] text-sm font-medium">Monthly Revenue</p>
+                                <span class="material-symbols-outlined text-primary text-xl">payments</span>
+                            </div>
+                            <div class="flex items-baseline gap-2">
+                                <p class="text-white text-3xl font-bold">$42,500</p>
+                                <p class="text-[#0bda1d] text-xs font-bold bg-[#0bda1d]/10 px-1.5 py-0.5 rounded">+12%
+                                </p>
+                            </div>
+                            <!-- Mini Chart Placeholder -->
+                            <div class="h-12 w-full mt-2 flex items-end gap-1">
+                                <div class="w-full bg-primary/20 h-4 rounded-t-sm"></div>
+                                <div class="w-full bg-primary/40 h-6 rounded-t-sm"></div>
+                                <div class="w-full bg-primary/20 h-3 rounded-t-sm"></div>
+                                <div class="w-full bg-primary/60 h-8 rounded-t-sm"></div>
+                                <div class="w-full bg-primary h-12 rounded-t-sm"></div>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col gap-3 rounded-xl p-6 bg-surface-dark border border-border-dark hover:border-primary/30 transition-colors">
+                            <div class="flex justify-between items-start">
+                                <p class="text-[#b9b29d] text-sm font-medium">Project Volume</p>
+                                <span class="material-symbols-outlined text-primary text-xl">architecture</span>
+                            </div>
+                            <div class="flex items-baseline gap-2">
+                                <p class="text-white text-3xl font-bold">14</p>
+                                <p class="text-[#0bda1d] text-xs font-bold bg-[#0bda1d]/10 px-1.5 py-0.5 rounded">+5%
+                                </p>
+                            </div>
+                            <div class="h-12 w-full mt-2 flex items-end gap-1">
+                                <div class="w-full bg-primary/30 h-8 rounded-t-sm"></div>
+                                <div class="w-full bg-primary/30 h-7 rounded-t-sm"></div>
+                                <div class="w-full bg-primary/30 h-9 rounded-t-sm"></div>
+                                <div class="w-full bg-primary h-10 rounded-t-sm"></div>
+                                <div class="w-full bg-primary/50 h-6 rounded-t-sm"></div>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col gap-3 rounded-xl p-6 bg-surface-dark border border-border-dark hover:border-primary/30 transition-colors">
+                            <div class="flex justify-between items-start">
+                                <p class="text-[#b9b29d] text-sm font-medium">Active Leads</p>
+                                <span class="material-symbols-outlined text-primary text-xl">person_search</span>
+                            </div>
+                            <div class="flex items-baseline gap-2">
+                                <p class="text-white text-3xl font-bold">32</p>
+                                <p class="text-[#0bda1d] text-xs font-bold bg-[#0bda1d]/10 px-1.5 py-0.5 rounded">+8%
+                                </p>
+                            </div>
+                            <div class="h-12 w-full mt-2 flex items-end gap-1">
+                                <div class="w-full bg-primary/20 h-5 rounded-t-sm"></div>
+                                <div class="w-full bg-primary h-12 rounded-t-sm"></div>
+                                <div class="w-full bg-primary/40 h-9 rounded-t-sm"></div>
+                                <div class="w-full bg-primary/30 h-7 rounded-t-sm"></div>
+                                <div class="w-full bg-primary/60 h-10 rounded-t-sm"></div>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col gap-3 rounded-xl p-6 bg-surface-dark border border-border-dark hover:border-primary/30 transition-colors">
+                            <div class="flex justify-between items-start">
+                                <p class="text-[#b9b29d] text-sm font-medium">Conv. Rate</p>
+                                <span class="material-symbols-outlined text-primary text-xl">ads_click</span>
+                            </div>
+                            <div class="flex items-baseline gap-2">
+                                <p class="text-white text-3xl font-bold">4.8%</p>
+                                <p class="text-[#fa4238] text-xs font-bold bg-[#fa4238]/10 px-1.5 py-0.5 rounded">-2%
+                                </p>
+                            </div>
+                            <div class="h-12 w-full mt-2 flex items-end gap-1">
+                                <div class="w-full bg-primary/60 h-10 rounded-t-sm"></div>
+                                <div class="w-full bg-primary/40 h-8 rounded-t-sm"></div>
+                                <div class="w-full bg-primary h-11 rounded-t-sm"></div>
+                                <div class="w-full bg-primary/30 h-6 rounded-t-sm"></div>
+                                <div class="w-full bg-primary/20 h-4 rounded-t-sm"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Recent Activity Feed -->
+                    <section class="lg:col-span-1">
+                        <div class="bg-surface-dark border border-border-dark rounded-xl h-full flex flex-col">
+                            <div class="p-6 border-b border-border-dark flex items-center justify-between">
+                                <h3 class="text-white font-bold">Recent Activity</h3>
+                                <button class="text-primary text-xs font-bold hover:underline">View All</button>
+                            </div>
+                            <div class="flex-1 overflow-y-auto p-4 space-y-6">
+                                <div class="flex gap-4">
+                                    <div class="relative">
+                                        <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                                            <span class="material-symbols-outlined text-primary text-sm">mail</span>
+                                        </div>
+                                        <div
+                                            class="absolute -bottom-1 -right-1 size-4 bg-green-500 rounded-full border-2 border-surface-dark">
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <p class="text-white text-sm font-semibold">New Inquiry: Oak Dining Set</p>
+                                        <p class="text-[#b9b29d] text-xs">Elena Richards • 2 mins ago</p>
+                                        <div
+                                            class="mt-2 text-[#b9b29d] text-xs bg-background-dark/50 p-2 rounded italic">
                                             "Looking for a custom finish on the 8-seater set..."
                                         </div>
-</div>
-</div>
-<div class="flex gap-4">
-<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-sm">cloud_upload</span>
-</div>
-<div class="flex flex-col">
-<p class="text-white text-sm font-semibold">Media Upload: Project #402</p>
-<p class="text-[#b9b29d] text-xs">Lucas Miller • 45 mins ago</p>
-<div class="mt-2 flex gap-2 overflow-hidden">
-<div class="size-12 rounded bg-cover bg-center border border-border-dark" data-alt="Wood furniture texture detail shot" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCFJLos-9n9CAsX8xRnQGUTlimsaD9eRugVDPBOuhuMyojBNHUd2BfrigR5EzbrJiHVK8V7voJ4mSkDx8TDYPD5uCeRrPqM8dIdtC7PpM1aQ1FkzXLA2KqCD2XSF3PvYZz7iu7QAh3XCVX5lFSMvV5Up0CbplXHqz3buzL-qaxscgilxKE91P1uBhy6WjMDp65G8ifzvbdvIfSjuls4YxlZLdsoo0g54A-dTBp5X7hvuWZHUK-Uoq1F06-gR2uau6MfM6RqfS-y8IQz");'></div>
-<div class="size-12 rounded bg-cover bg-center border border-border-dark" data-alt="Modern minimalist chair design" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBF9y7ngZWRUkSy4_ts-GTD2VYSJfMrloxtpcyobyj8yzNPWolGZ5m89XxggwtPa2jtvf8LCwFTdbeMNyoQATGPNSTAOqQx58w-3qEKAsDOefKRXVa5EBv91rsHWjULQhoV3q4z-f7zwCTeeqBsytMTN_F0ff7E4y8uI6vn7N-QCzAZMlBTE0PyOAhivOPaNpy_B8mcIXd1qF_NYObRC1SqHMt5htL-mfoL-D1RoDDBow9FPXmXSNWj59no_GqVx82W62uJHXRVTHdk");'></div>
-<div class="size-12 rounded bg-border-dark flex items-center justify-center text-[10px] text-white">+2</div>
-</div>
-</div>
-</div>
-<div class="flex gap-4">
-<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-sm">edit_calendar</span>
-</div>
-<div class="flex flex-col">
-<p class="text-white text-sm font-semibold">Journal Post Published</p>
-<p class="text-[#b9b29d] text-xs">System • 3 hours ago</p>
-<p class="text-primary text-xs mt-1 font-medium">"Sustainable Wood Sourcing 2024"</p>
-</div>
-</div>
-<div class="flex gap-4 opacity-70">
-<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-</div>
-<div class="flex flex-col">
-<p class="text-white text-sm font-semibold">Inventory Update</p>
-<p class="text-[#b9b29d] text-xs">Warehouse Alpha • 5 hours ago</p>
-<p class="text-[#b9b29d] text-[10px] mt-1">24 units of 'Luna Lamp' restocked.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Main Visualization / Trends -->
-<section class="lg:col-span-2">
-<div class="bg-surface-dark border border-border-dark rounded-xl p-6 h-full flex flex-col gap-6">
-<div class="flex items-center justify-between">
-<div class="flex flex-col">
-<h3 class="text-white font-bold">Project Growth Trend</h3>
-<p class="text-[#b9b29d] text-xs">Visualizing new project volume over the last 6 months</p>
-</div>
-<select class="bg-background-dark border-border-dark text-[#b9b29d] text-xs rounded-lg px-3 py-1.5 focus:ring-primary">
-<option>Last 6 Months</option>
-<option>Last 12 Months</option>
-<option>Year to Date</option>
-</select>
-</div>
-<!-- Mock Chart Visualization -->
-<div class="flex-1 min-h-[300px] flex items-end justify-between gap-4 pt-10 pb-2 px-2 relative">
-<!-- Grid Lines -->
-<div class="absolute inset-0 flex flex-col justify-between py-10 pointer-events-none opacity-10">
-<div class="w-full border-t border-white"></div>
-<div class="w-full border-t border-white"></div>
-<div class="w-full border-t border-white"></div>
-<div class="w-full border-t border-white"></div>
-</div>
-<div class="flex-1 flex flex-col items-center gap-2">
-<div class="w-full bg-gradient-to-t from-primary/5 to-primary/40 rounded-t-lg transition-all hover:to-primary" style="height: 45%;"></div>
-<span class="text-[#b9b29d] text-[10px] font-bold">JAN</span>
-</div>
-<div class="flex-1 flex flex-col items-center gap-2">
-<div class="w-full bg-gradient-to-t from-primary/5 to-primary/40 rounded-t-lg transition-all hover:to-primary" style="height: 60%;"></div>
-<span class="text-[#b9b29d] text-[10px] font-bold">FEB</span>
-</div>
-<div class="flex-1 flex flex-col items-center gap-2">
-<div class="w-full bg-gradient-to-t from-primary/5 to-primary/40 rounded-t-lg transition-all hover:to-primary" style="height: 55%;"></div>
-<span class="text-[#b9b29d] text-[10px] font-bold">MAR</span>
-</div>
-<div class="flex-1 flex flex-col items-center gap-2">
-<div class="w-full bg-gradient-to-t from-primary/5 to-primary/40 rounded-t-lg transition-all hover:to-primary" style="height: 80%;"></div>
-<span class="text-[#b9b29d] text-[10px] font-bold">APR</span>
-</div>
-<div class="flex-1 flex flex-col items-center gap-2">
-<div class="w-full bg-gradient-to-t from-primary/5 to-primary/40 rounded-t-lg transition-all hover:to-primary" style="height: 70%;"></div>
-<span class="text-[#b9b29d] text-[10px] font-bold">MAY</span>
-</div>
-<div class="flex-1 flex flex-col items-center gap-2">
-<div class="w-full bg-primary rounded-t-lg shadow-[0_0_15px_rgba(236,182,19,0.3)]" style="height: 95%;"></div>
-<span class="text-white text-[10px] font-bold">JUN</span>
-</div>
-</div>
-<div class="flex items-center gap-6 pt-4 border-t border-border-dark">
-<div class="flex items-center gap-2">
-<div class="size-2 rounded-full bg-primary"></div>
-<span class="text-[#b9b29d] text-xs font-medium">Bespoke Projects</span>
-</div>
-<div class="flex items-center gap-2">
-<div class="size-2 rounded-full bg-white/20"></div>
-<span class="text-[#b9b29d] text-xs font-medium">Stock Orders</span>
-</div>
-</div>
-</div>
-</section>
-</div>
-</div>
-</main>
-</div>
-</body></html>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-primary text-sm">cloud_upload</span>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <p class="text-white text-sm font-semibold">Media Upload: Project #402</p>
+                                        <p class="text-[#b9b29d] text-xs">Lucas Miller • 45 mins ago</p>
+                                        <div class="mt-2 flex gap-2 overflow-hidden">
+                                            <div class="size-12 rounded bg-cover bg-center border border-border-dark"
+                                                data-alt="Wood furniture texture detail shot"
+                                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCFJLos-9n9CAsX8xRnQGUTlimsaD9eRugVDPBOuhuMyojBNHUd2BfrigR5EzbrJiHVK8V7voJ4mSkDx8TDYPD5uCeRrPqM8dIdtC7PpM1aQ1FkzXLA2KqCD2XSF3PvYZz7iu7QAh3XCVX5lFSMvV5Up0CbplXHqz3buzL-qaxscgilxKE91P1uBhy6WjMDp65G8ifzvbdvIfSjuls4YxlZLdsoo0g54A-dTBp5X7hvuWZHUK-Uoq1F06-gR2uau6MfM6RqfS-y8IQz");'>
+                                            </div>
+                                            <div class="size-12 rounded bg-cover bg-center border border-border-dark"
+                                                data-alt="Modern minimalist chair design"
+                                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBF9y7ngZWRUkSy4_ts-GTD2VYSJfMrloxtpcyobyj8yzNPWolGZ5m89XxggwtPa2jtvf8LCwFTdbeMNyoQATGPNSTAOqQx58w-3qEKAsDOefKRXVa5EBv91rsHWjULQhoV3q4z-f7zwCTeeqBsytMTN_F0ff7E4y8uI6vn7N-QCzAZMlBTE0PyOAhivOPaNpy_B8mcIXd1qF_NYObRC1SqHMt5htL-mfoL-D1RoDDBow9FPXmXSNWj59no_GqVx82W62uJHXRVTHdk");'>
+                                            </div>
+                                            <div
+                                                class="size-12 rounded bg-border-dark flex items-center justify-center text-[10px] text-white">
+                                                +2</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-sm">edit_calendar</span>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <p class="text-white text-sm font-semibold">Journal Post Published</p>
+                                        <p class="text-[#b9b29d] text-xs">System • 3 hours ago</p>
+                                        <p class="text-primary text-xs mt-1 font-medium">"Sustainable Wood Sourcing
+                                            2024"</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4 opacity-70">
+                                    <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <p class="text-white text-sm font-semibold">Inventory Update</p>
+                                        <p class="text-[#b9b29d] text-xs">Warehouse Alpha • 5 hours ago</p>
+                                        <p class="text-[#b9b29d] text-[10px] mt-1">24 units of 'Luna Lamp' restocked.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Main Visualization / Trends -->
+                    <section class="lg:col-span-2">
+                        <div
+                            class="bg-surface-dark border border-border-dark rounded-xl p-6 h-full flex flex-col gap-6">
+                            <div class="flex items-center justify-between">
+                                <div class="flex flex-col">
+                                    <h3 class="text-white font-bold">Project Growth Trend</h3>
+                                    <p class="text-[#b9b29d] text-xs">Visualizing new project volume over the last 6
+                                        months</p>
+                                </div>
+                                <select
+                                    class="bg-background-dark border-border-dark text-[#b9b29d] text-xs rounded-lg px-3 py-1.5 focus:ring-primary">
+                                    <option>Last 6 Months</option>
+                                    <option>Last 12 Months</option>
+                                    <option>Year to Date</option>
+                                </select>
+                            </div>
+                            <!-- Mock Chart Visualization -->
+                            <div
+                                class="flex-1 min-h-[300px] flex items-end justify-between gap-4 pt-10 pb-2 px-2 relative">
+                                <!-- Grid Lines -->
+                                <div
+                                    class="absolute inset-0 flex flex-col justify-between py-10 pointer-events-none opacity-10">
+                                    <div class="w-full border-t border-white"></div>
+                                    <div class="w-full border-t border-white"></div>
+                                    <div class="w-full border-t border-white"></div>
+                                    <div class="w-full border-t border-white"></div>
+                                </div>
+                                <div class="flex-1 flex flex-col items-center gap-2">
+                                    <div class="w-full bg-gradient-to-t from-primary/5 to-primary/40 rounded-t-lg transition-all hover:to-primary"
+                                        style="height: 45%;"></div>
+                                    <span class="text-[#b9b29d] text-[10px] font-bold">JAN</span>
+                                </div>
+                                <div class="flex-1 flex flex-col items-center gap-2">
+                                    <div class="w-full bg-gradient-to-t from-primary/5 to-primary/40 rounded-t-lg transition-all hover:to-primary"
+                                        style="height: 60%;"></div>
+                                    <span class="text-[#b9b29d] text-[10px] font-bold">FEB</span>
+                                </div>
+                                <div class="flex-1 flex flex-col items-center gap-2">
+                                    <div class="w-full bg-gradient-to-t from-primary/5 to-primary/40 rounded-t-lg transition-all hover:to-primary"
+                                        style="height: 55%;"></div>
+                                    <span class="text-[#b9b29d] text-[10px] font-bold">MAR</span>
+                                </div>
+                                <div class="flex-1 flex flex-col items-center gap-2">
+                                    <div class="w-full bg-gradient-to-t from-primary/5 to-primary/40 rounded-t-lg transition-all hover:to-primary"
+                                        style="height: 80%;"></div>
+                                    <span class="text-[#b9b29d] text-[10px] font-bold">APR</span>
+                                </div>
+                                <div class="flex-1 flex flex-col items-center gap-2">
+                                    <div class="w-full bg-gradient-to-t from-primary/5 to-primary/40 rounded-t-lg transition-all hover:to-primary"
+                                        style="height: 70%;"></div>
+                                    <span class="text-[#b9b29d] text-[10px] font-bold">MAY</span>
+                                </div>
+                                <div class="flex-1 flex flex-col items-center gap-2">
+                                    <div class="w-full bg-primary rounded-t-lg shadow-[0_0_15px_rgba(236,182,19,0.3)]"
+                                        style="height: 95%;"></div>
+                                    <span class="text-white text-[10px] font-bold">JUN</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-6 pt-4 border-t border-border-dark">
+                                <div class="flex items-center gap-2">
+                                    <div class="size-2 rounded-full bg-primary"></div>
+                                    <span class="text-[#b9b29d] text-xs font-medium">Bespoke Projects</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="size-2 rounded-full bg-white/20"></div>
+                                    <span class="text-[#b9b29d] text-xs font-medium">Stock Orders</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
