@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Ochestra: The Boutique Cart</title>
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" as="style">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap"
         rel="stylesheet" />
@@ -161,6 +162,11 @@
                         <span class="material-symbols-outlined">arrow_back</span>
                         Return to Gallery
                     </a>
+                    <button onclick="clearCart()" id="clear-cart-btn" class="btn-secondary flex items-center gap-2" 
+                        style="display: none; border: 1px solid #ef4444; color: #ef4444;">
+                        <span class="material-symbols-outlined">delete_outline</span>
+                        Clear Cart
+                    </button>
                 </div>
 
                 <h1 class="text-4xl font-serif italic mb-10">Your Curation</h1>
@@ -187,19 +193,19 @@
                     <div class="flex flex-col gap-4 text-sm">
                         <div class="flex justify-between">
                             <span class="text-slate-400">Subtotal</span>
-                            <span class="text-white font-medium" id="cart-subtotal">$0.00</span>
+                            <span class="text-white font-medium" id="cart-subtotal">₦0</span>
                         </div>
                         <div class="flex justify-between">
                             <span class="text-slate-400">White-glove Delivery</span>
-                            <span class="text-white font-medium">$450.00</span>
+                            <span class="text-white font-medium">₦450</span>
                         </div>
                         <div class="flex justify-between">
                             <span class="text-slate-400">Taxes (Estimated)</span>
-                            <span class="text-white font-medium" id="cart-tax">$0.00</span>
+                            <span class="text-white font-medium" id="cart-tax">₦0</span>
                         </div>
                         <div class="pt-4 border-t border-white/10 flex justify-between items-end">
                             <span class="text-lg font-serif italic">Total Curation</span>
-                            <span class="text-3xl font-bold text-gold" id="cart-total">$0.00</span>
+                            <span class="text-3xl font-bold text-gold" id="cart-total">₦0</span>
                         </div>
                     </div>
 
@@ -281,12 +287,17 @@
 
             function renderCart() {
                 const cart = JSON.parse(localStorage.getItem('ochestra_cart')) || [];
+                const clearBtn = document.getElementById('clear-cart-btn');
 
                 if (cart.length === 0) {
                     itemsContainer.innerHTML = '<div class="text-slate-500 font-serif italic text-xl">Your curation is currently empty.</div>';
                     updateTotals(0);
+                    if (clearBtn) clearBtn.style.display = 'none';
                     return;
                 }
+
+                // Show clear button when cart has items
+                if (clearBtn) clearBtn.style.display = 'flex';
 
                 itemsContainer.innerHTML = '';
                 let subtotal = 0;
@@ -299,7 +310,7 @@
                     const itemHtml = `
                         <div class="cart-item-card p-6 rounded-lg flex flex-col sm:flex-row gap-8 items-center">
                             <div class="relative overflow-hidden rounded-md">
-                                <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+                                <img src="${item.image}" alt="${item.name}" class="cart-item-img"loading="lazy">
                             </div>
                             
                             <div class="flex-1 flex flex-col gap-2 text-center sm:text-left">
@@ -339,9 +350,9 @@
                 const tax = subtotal * 0.08;
                 const total = subtotal + delivery + tax;
 
-                subtotalEl.textContent = `$${subtotal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-                taxEl.textContent = `$${tax.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-                totalEl.textContent = `$${total.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+                subtotalEl.textContent = `₦${subtotal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+                taxEl.textContent = `₦${tax.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+                totalEl.textContent = `₦${total.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
             }
 
             window.updateQty = function (index, delta) {
@@ -359,6 +370,14 @@
                 localStorage.setItem('ochestra_cart', JSON.stringify(cart));
                 renderCart();
                 if (window.updateCartCounter) window.updateCartCounter();
+            };
+
+            window.clearCart = function () {
+                if (confirm('Are you sure you want to clear your entire cart? This action cannot be undone.')) {
+                    localStorage.removeItem('ochestra_cart');
+                    renderCart();
+                    if (window.updateCartCounter) window.updateCartCounter();
+                }
             };
 
             // Link copy logic

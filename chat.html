@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Ochestra Concierge Chat</title>
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
         rel="stylesheet" />
     <link
@@ -19,6 +20,77 @@
             justify-content: center;
             overflow: hidden;
             background-color: var(--color-midnight);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 0.5rem;
+            }
+
+            .chat-container {
+                max-width: 100% !important;
+                width: 100% !important;
+                height: 100vh !important;
+                max-height: 100vh !important;
+            }
+
+            .chat-header {
+                padding: 1rem;
+            }
+
+            .chat-scroll-area {
+                max-height: calc(100vh - 8rem) !important;
+                padding: 1rem;
+                gap: 1rem !important;
+            }
+
+            .chat-input-area {
+                padding: 1rem;
+            }
+
+            .chat-input {
+                padding: 0.75rem !important;
+                font-size: 1rem !important;
+            }
+
+            .message-bubble {
+                font-size: 0.875rem !important;
+                padding: 0.75rem 1rem !important;
+            }
+
+            .flex {
+                flex-wrap: wrap;
+            }
+
+            [style*="max-width: 85%"] {
+                max-width: 95% !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .chat-scroll-area {
+                gap: 0.75rem !important;
+            }
+
+            .chat-header {
+                padding: 0.75rem;
+                flex-wrap: wrap;
+            }
+
+            .message-bubble {
+                font-size: 0.75rem !important;
+                padding: 0.5rem 0.75rem !important;
+            }
+
+            [style*="width: 2.25rem"] {
+                width: 1.75rem !important;
+                height: 1.75rem !important;
+            }
+
+            [style*="width: 2rem"] {
+                width: 1.5rem !important;
+                height: 1.5rem !important;
+            }
         }
     </style>
 </head>

@@ -7,6 +7,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Ochestra | Digital Portfolio</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" as="style">
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
@@ -79,11 +80,11 @@
                     <a class="hover:text-primary transition-colors" href="#">Archives</a>
                 </nav>
                 <div class="flex gap-4">
-                    <button
+                    <button onclick="downloadPortfolio()"
                         class="flex min-w-[120px] items-center justify-center rounded bg-primary px-4 py-2 text-xs font-bold uppercase tracking-widest text-midnight hover:bg-primary/90 transition-all">
                         Download PDF
                     </button>
-                    <button
+                    <button onclick="window.print()"
                         class="flex items-center justify-center rounded bg-white/10 px-3 text-white hover:bg-white/20 transition-all">
                         <span class="material-symbols-outlined text-lg">print</span>
                     </button>
@@ -252,6 +253,27 @@
             </button>
         </div>
     </div>
+    
+    <script>
+        function downloadPortfolio() {
+            // Create a simple HTML to PDF using browser's print functionality
+            // For a real PDF, you'd need a library like html2pdf or jsPDF
+            // This creates a downloadable version through print-to-file
+            const element = document.querySelector('[data-alt="Subtle dark walnut wood grain texture"]')?.parentElement || document.documentElement;
+            
+            // Method 1: Use browser's built-in print dialog (user can save as PDF)
+            window.print();
+        }
+        
+        // Alternative: If you want automatic PDF download, add this library to head:
+        // <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+        // Then use: 
+        // function downloadPortfolioAsPDF() {
+        //     const element = document.documentElement;
+        //     const opt = { margin: 10, filename: 'ochestra-portfolio.pdf', image: { type: 'jpeg', quality: 0.98 }, html2canvas: { scale: 2 }, jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' } };
+        //     html2pdf().set(opt).from(element).save();
+        // }
+    </script>
 </body>
 
 </html>

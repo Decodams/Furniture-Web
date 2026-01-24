@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Ochestra Gallery: The Masterpiece Collection</title>
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" as="style">
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@100..900&amp;display=swap"
         rel="stylesheet" />
@@ -253,11 +254,6 @@
             </div>
 
             <div class="flex items-center gap-8">
-                <div class="search-container">
-                    <span class="material-symbols-outlined search-icon">search</span>
-                    <input class="search-input" id="gallery-search" placeholder="Search archive..." type="text" />
-                </div>
-
                 <div class="flex items-center gap-8">
                     <button class="nav-link hidden-lg" onclick="location.href='project.html'"
                         style="display: block; background-color: var(--color-gold); color: var(--color-midnight); padding: 0.5rem 1.5rem;">Your
@@ -383,7 +379,7 @@
                     <!-- Static Video Item 1 -->
                     <div class="video-card group" onclick="playVideo('https://www.w3schools.com/html/mov_bbb.mp4')">
                         <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLtlnBd3LqeVoGI_e8gjfPkPb1zDAGK42v3pg6q26PVA7_X9hTGaZmGczhDK8CO_CF2-fEzYg8HZdQvBKXDpGoFZcZxIJXGbF86MmAzTd_qRwmU4AAYiArv8pnt_YkKi87OlQAAttlyM_RKk84vdu1dtAV67gOastb0IfQrz5aZfTEwl0L0KTeNg5qySMbXHURbFPSYiTjvf_g_wALNPUkGqschssXTZbsrNLrUEXH8dxZvRo3qW1OrLCBzj4iI1pFnzdk2Nek3hRY"
-                            alt="Artisan Video">
+                            alt="Artisan Video"loading="lazy">
                         <div class="play-icon">
                             <span class="material-symbols-outlined" style="font-size: 2rem;">play_arrow</span>
                         </div>
@@ -396,7 +392,7 @@
                     <!-- Static Video Item 2 -->
                     <div class="video-card group" onclick="playVideo('https://www.w3schools.com/html/movie.mp4')">
                         <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDebDkx2K_iA-3TasuOokRlZE4q9l5PkBxPoUmhMmSAnSYgkZdAbPrXeD1TSITs2_BdG0JirHdGsnjceuJzDlwHAmnO3_cmyVT4Ne7CTB_YFaC1wKa-1EvuhfuiZHraYFPv_QuhFBLP-FjSX8OAQ75wGYoh69nRuR-sDj-enJVN70Lh4hEVOQ7d5zNuLEHCLbxDPZ8SKM7Zjkt9ZIAcDsc6SQJNDmhqFKRSg_BWytbe0xHlyjXHJj2YX9mIspyPrfyU62xYo9V2UTl0"
-                            alt="Workshop Video">
+                            alt="Workshop Video"loading="lazy">
                         <div class="play-icon">
                             <span class="material-symbols-outlined" style="font-size: 2rem;">play_arrow</span>
                         </div>
@@ -409,7 +405,7 @@
                     <!-- Static Video Item 3 (Additional for visual) -->
                     <div class="video-card group" onclick="playVideo('https://www.w3schools.com/html/mov_bbb.mp4')">
                         <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFTsfwlmeBv68O_epZddDz6XMCGtyKcno7svVWoozcQ2202XXXfOB1Xyy4IUlG0AWvls4HwbQ5NwqoKgBAwAI8OE5svCP51ZGSZabaNBoWoGk6iMQ3PAC4qKD1fyE8AfovBH-3pR47nTJXqpAG8kibStB-u3D9ccp5wWxzblHiCSpY84hzZXv6Ktly_WHIuU0nzBCYUXCNUQJFzqDCD1j3JMHb6HlfO9WL1C_Iozl7P-TTINJG1cTp31NqXTACthGyYH4KTCZMnBg1"
-                            alt="Collection Promo">
+                            alt="Collection Promo"loading="lazy">
                         <div class="play-icon">
                             <span class="material-symbols-outlined" style="font-size: 2rem;">play_arrow</span>
                         </div>
@@ -487,6 +483,11 @@
                                     d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
                             </svg>
                         </a>
+                        <a href="https://wa.me/2349000000000" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-1.579 0-3.051.487-4.283 1.398l-.308.19-3.19.501.51-3.065.199-.314C2.704 4.9 4.499 2.5 7.07 2.5c1.932 0 3.75.75 5.112 2.107.656.653 1.148 1.432 1.468 2.304-.018.001-.034.001-.051.001-1.734 0-3.374.522-4.74 1.496-.186-.043-.37-.082-.556-.082m10.906-3.88C19.412.499 15.917 0 12.319 0 5.932 0 .549 5.338.549 11.726c0 2.065.505 4.078 1.47 5.868L.687 23.834l6.336-1.959c1.682.921 3.58 1.407 5.512 1.407 6.387 0 11.77-5.338 11.77-11.726 0-3.136-.996-6.066-2.889-8.55z" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
                 <div>
@@ -535,13 +536,13 @@
                 <span class="material-symbols-outlined">close</span>
             </button>
             <div class="w-full md:w-1/2 relative bg-black">
-                <img src="" class="w-full h-full object-cover">
+                <img src="" class="w-full h-full object-cover"loading="lazy">
             </div>
             <div class="w-full md:w-1/2 p-12 flex flex-col justify-center">
                 <span class="text-gold uppercase tracking-widest text-xs font-bold mb-4">Collection Piece</span>
                 <h2 class="font-serif italic text-4xl mb-4">Product Name</h2>
                 <div class="flex items-center gap-4 mb-6">
-                    <span class="text-2xl font-bold text-white">$0.00</span>
+                    <span class="text-2xl font-bold text-white">₦0</span>
                     <div class="flex text-gold text-sm">
                         <span class="material-symbols-outlined">star</span>
                         <span class="material-symbols-outlined">star</span>
