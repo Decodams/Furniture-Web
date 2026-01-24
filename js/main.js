@@ -21,30 +21,19 @@ window.closeVideo = function () {
 
 document.addEventListener('DOMContentLoaded', () => {
     // Shared Asset Arrays
-    const serviceImages = [
-        'Image/Bedroom.jpg',
-        'Image/Bedroom2.jpg',
-        'Image/Children.jpg',
-        'Image/Class.jpg',
-        'Image/Console.jpg',
-        'Image/Dinning.jpg',
-        'Image/Frame.jpg',
-        'Image/Mattress.jpg',
-        'Image/Office.jpg',
-        'Image/Outdoor.jpg',
-        'Image/Pillow.jpg',
-        'Image/Setup.jpg',
-        'Image/Shelf.jpg',
-        'Image/Tv.jpg'
-    ];
+    const serviceImages = {
+        'custom': 'Image/Setup.jpg',
+        'repair': 'Image/Class.jpg',
+        'design': 'Image/sunny_studio.png',
+        'sales': 'Image/Office.jpg'
+    };
 
-    const serviceDescriptionTexts = [
-        "Experience the pinnacle of artisanal mastery with our dedicated team of craftsmen, bringing centuries of tradition to modern living.",
-        "Our approach combines sustainable materials with visionary design, ensuring every piece reflects your unique lifestyle and legacy.",
-        "Where meticulous attention to detail meets the soul of raw timber. We don't just create furniture; we craft stories in wood.",
-        "Transforming spatial concepts into architectural realities. Our commitment to excellence is reflected in every joint and finish.",
-        "A legacy of luxury, hand-finished with 24k gold leaf and curated for the most discerning collectors of fine furniture."
-    ];
+    const serviceDescriptionTexts = {
+        'custom': "Experience the pinnacle of artisanal mastery with our dedicated team of craftsmen, bringing centuries of tradition to modern living.",
+        'repair': "Our approach combines sustainable materials with visionary design, ensuring every piece reflects your unique lifestyle and legacy.",
+        'design': "Where meticulous attention to detail meets the soul of raw timber. We don't just create furniture; we craft stories in wood.",
+        'sales': "Transforming spatial concepts into architectural realities. Our commitment to excellence is reflected in every joint and finish."
+    };
 
     // Active Nav Indicator
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
@@ -251,19 +240,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (section.id === `service-${target}`) {
                         section.classList.remove('hidden');
 
-                        // Pick random image and text
-                        const randomImg = serviceImages[Math.floor(Math.random() * serviceImages.length)];
-                        const randomText = serviceDescriptionTexts[Math.floor(Math.random() * serviceDescriptionTexts.length)];
+                        // Pick fixed image and text for this service
+                        const targetImg = serviceImages[target] || 'Image/Bedroom.jpg';
+                        const targetText = serviceDescriptionTexts[target] || "Defining the future of luxury living.";
 
                         const img = section.querySelector('img');
                         if (img) {
-                            img.src = randomImg;
-                            img.style.filter = 'none'; // Remove grayscale for more impact
+                            img.src = targetImg;
+                            img.style.filter = 'none';
                         }
 
                         const p = section.querySelector('p');
                         if (p) {
-                            p.textContent = randomText;
+                            p.textContent = targetText;
                         }
                     } else {
                         section.classList.add('hidden');
@@ -342,15 +331,88 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Cart Logic
+    let cart = JSON.parse(localStorage.getItem('ochestra_cart')) || [];
+
+    function updateCartCounter() {
+        const counters = document.querySelectorAll('.cart-counter');
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        counters.forEach(counter => {
+            counter.textContent = totalItems;
+            if (totalItems > 0) {
+                counter.classList.remove('hidden');
+            } else {
+                counter.classList.add('hidden');
+            }
+        });
+    }
+
+    window.addToCart = function (product) {
+        const existingItem = cart.find(item => item.id === product.id);
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({ ...product, quantity: 1 });
+        }
+        localStorage.setItem('ochestra_cart', JSON.stringify(cart));
+        updateCartCounter();
+        alert(`${product.name} added to cart!`);
+    };
+
+    updateCartCounter();
+
     // Modal Trigger for all pages
-    const quickViewTriggers = document.querySelectorAll('.quick-view-btn, .product-card img');
+    const quickViewTriggers = document.querySelectorAll('.quick-view-btn, .product-card img, .masonry-item img');
     quickViewTriggers.forEach(trigger => {
         trigger.addEventListener('click', (e) => {
+            const card = trigger.closest('.product-card') || trigger.closest('.masonry-item');
             const modal = document.getElementById('product-modal');
-            if (modal) {
+            if (modal && card) {
+                const titleEl = card.querySelector('h3');
+                const priceEl = card.querySelector('.text-gold, .product-price'); // product-price is a fallback
+                const imgEl = card.querySelector('img');
+                const catEl = card.querySelector('p, .text-gold.uppercase');
+
+                const name = titleEl ? titleEl.textContent : 'Bespoke Piece';
+                const price = priceEl ? priceEl.textContent : 'Inquire for Price';
+                const img = imgEl ? imgEl.src : '';
+                const category = catEl ? catEl.textContent : 'Collection';
+
+                modal.querySelector('h2').textContent = name;
+                modal.querySelector('.text-2xl').textContent = price;
+                modal.querySelector('img').src = img;
+                modal.querySelector('.text-gold.uppercase').textContent = category;
+
+                // Update Add to Cart button in modal
+                const modalAddToCart = modal.querySelector('.btn-primary');
+                if (modalAddToCart) {
+                    modalAddToCart.onclick = () => {
+                        window.addToCart({
+                            id: name.toLowerCase().replace(/\s+/g, '-'),
+                            name: name,
+                            price: price,
+                            image: img,
+                            category: category
+                        });
+                    };
+                }
+
                 modal.classList.add('active');
-                // You could dynamically update modal content here if data attributes were present
             }
+        });
+    });
+
+    // Handle Direct Add to Cart buttons (if any)
+    const directAddToCartBtns = document.querySelectorAll('.direct-add-to-cart');
+    directAddToCartBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const id = btn.getAttribute('data-id');
+            const name = btn.getAttribute('data-name');
+            const price = btn.getAttribute('data-price');
+            const image = btn.getAttribute('data-image');
+            const category = btn.getAttribute('data-category');
+
+            window.addToCart({ id, name, price, image, category });
         });
     });
 });

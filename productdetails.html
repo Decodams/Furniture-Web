@@ -59,6 +59,10 @@
             <div class="flex items-center gap-8">
                 <button class="nav-link hidden-lg" onclick="location.href='contact.html'"
                     style="display: block; border: 1px solid rgba(212,175,55,0.4); padding: 0.5rem 1.5rem; color: var(--color-gold);">Inquire</button>
+                <a href="cart.html" class="nav-link flex items-center gap-2">
+                    <span class="material-symbols-outlined">shopping_bag</span>
+                    <span class="cart-counter">0</span>
+                </a>
                 <button class="mobile-toggle">
                     <span class="material-symbols-outlined">menu</span>
                 </button>
@@ -190,8 +194,13 @@
 
                 <!-- CTA -->
                 <div class="flex flex-col gap-4">
-                    <button class="btn-primary"
+                    <button class="btn-primary" id="add-to-cart-btn"
                         style="background: var(--color-gold); color: var(--color-midnight); display: flex; align-items: center; justify-content: center; gap: 0.75rem;">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                        Add to Cart
+                    </button>
+                    <button class="btn-secondary"
+                        style="border: 1px solid var(--color-slate-700); display: flex; align-items: center; justify-content: center; gap: 0.75rem;">
                         <span class="material-symbols-outlined">design_services</span>
                         Inquire for Customization
                     </button>
@@ -302,7 +311,7 @@
             </div>
             <div
                 style="text-align: center; color: var(--color-slate-500); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.2em;">
-                © 2024 Ochestra Black Label.
+                © 2026 Ochestra Black Label.
             </div>
         </div>
     </footer>
@@ -344,6 +353,19 @@
                 if (detail.open) icon.textContent = 'remove';
             }
         });
+
+        // Add to Cart Logic for this page
+        document.getElementById('add-to-cart-btn').onclick = function () {
+            if (window.addToCart) {
+                window.addToCart({
+                    id: 'signature-walnut-dining-table',
+                    name: 'Signature Walnut Dining Table',
+                    price: '$4,200.00',
+                    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAuRr4DJDE4A4riVwKpvnKA4GrnEclGCbiUxUgGi-eeuWgDRgA5V28kGkoBl_-CgN_yG32vtg70AOidaqc9AyHApnDOBsYZkaeR6Ws4b7tz3UxJewh3Uc_o7KD2wuuk6Me9nulnhtVjUeQZnKcc-9lxHkEshsOfd3B7rlsQ69B8kn-VMHeB1AAidtdTM3Iczol-6IMF3wi3E4kcORZyDQYZ2ER0BIyvNsccCUtVZXOhZS_hmq11CPcNm2ouuvl2BEjPD8xp35h2VPyh',
+                    category: 'Dining Room'
+                });
+            }
+        };
     </script>
 </body>
 
